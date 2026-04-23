@@ -56,11 +56,12 @@
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 500;
-      font-size: 1.25rem;
-      letter-spacing: .04em;
+      font-size: 1.05rem;
+      letter-spacing: .03em;
       color: var(--charcoal);
+      white-space: nowrap;
     }
-    .nav-logo em { font-style: italic; color: var(--gold); }
+    .nav-logo em { font-style: italic; color: var(--gold); font-size: .85em; font-weight: 300; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -806,6 +807,7 @@
       nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      .nav-logo { font-size: .78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 60px); }
       .container { padding: 0 1.5rem; }
       footer { padding: 2rem 1.5rem; }
 
@@ -814,7 +816,7 @@
       .hero-photo-wrap { display: none; }
       .hero-photo-wrap-mobile {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-bottom: 2rem;
       }
       .hero-photo-wrap-mobile .hero-photo-frame {
@@ -858,7 +860,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Matteo <em>Solari</em></div>
+    <div class="nav-logo">ICT Infrastructure Engineer <em>| Hybrid Cloud • Automation • Security</em></div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#strengths">Strengths</a>
@@ -889,7 +891,6 @@
             <img src="profile.jpeg" alt="Matteo Solari" class="hero-photo">
           </div>
         </div>
-        <div class="hero-tag">ICT Infrastructure Engineer</div>
         <div class="hero-name">Matteo<br><em>Solari</em></div>
         <div class="hero-role">
           <span>Zurich, Switzerland</span>
