@@ -199,6 +199,11 @@
       box-sizing: border-box;
     }
 
+    /* Mobile photo shown inline above text */
+    .hero-photo-wrap-mobile {
+      display: none;
+    }
+
     /* ── Left: text content ── */
     .hero-content {
       min-width: 0;
@@ -807,6 +812,15 @@
       #hero { min-height: auto; }
       .hero-inner { padding: 4rem 1.5rem 3rem; grid-template-columns: 1fr; gap: 2rem; }
       .hero-photo-wrap { display: none; }
+      .hero-photo-wrap-mobile {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .hero-photo-wrap-mobile .hero-photo-frame {
+        width: 140px;
+        max-width: 140px;
+      }
       .hero-headline { font-size: clamp(2.2rem, 8vw, 3.2rem); }
       .hero-btns { flex-direction: column; }
       .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
@@ -869,6 +883,12 @@
   <section id="hero">
     <div class="hero-inner">
       <div class="hero-content">
+        <!-- Photo shown only on mobile, above the text -->
+        <div class="hero-photo-wrap-mobile">
+          <div class="hero-photo-frame">
+            <img src="profile.jpeg" alt="Matteo Solari" class="hero-photo">
+          </div>
+        </div>
         <div class="hero-tag">ICT Infrastructure Engineer</div>
         <div class="hero-name">Matteo<br><em>Solari</em></div>
         <div class="hero-role">
