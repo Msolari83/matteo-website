@@ -1,153 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matteo Solari — IT Infrastructure Engineer</title>
+  <title>Matteo Solari — ICT Infrastructure Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <style>
-    /* ─── TOKENS ─────────────────────────────────────────────── */
     :root {
-      --accent:      #3b82f6;
-      --accent-dim:  #1d4ed8;
-      --accent-glow: rgba(59,130,246,.18);
-
-      --radius: 12px;
-      --transition: .35s cubic-bezier(.4,0,.2,1);
-
-      /* dark defaults */
-      --bg:          #080c14;
-      --bg2:         #0e1420;
-      --bg3:         #151d2e;
-      --surface:     #111827;
-      --border:      rgba(255,255,255,.07);
-      --text:        #e2e8f0;
-      --text-muted:  #64748b;
-      --text-dim:    #94a3b8;
-      --nav-bg:      rgba(8,12,20,.85);
+      --cream:    #f4f0eb;
+      --warm:     #e8e2d9;
+      --charcoal: #1a1a1a;
+      --ink:      #2d2d2d;
+      --mid:      #5a5a5a;
+      --muted:    #8a8a8a;
+      --rule:     rgba(26,26,26,.1);
+      --gold:     #b8965a;
+      --gold-dim: rgba(184,150,90,.15);
+      --radius:   4px;
+      --t:        .4s cubic-bezier(.4,0,.2,1);
     }
 
-    [data-theme="light"] {
-      --bg:         #f1f5fb;
-      --bg2:        #e8eef7;
-      --bg3:        #dde5f0;
-      --surface:    #ffffff;
-      --border:     rgba(0,0,0,.08);
-      --text:       #0f172a;
-      --text-muted: #64748b;
-      --text-dim:   #475569;
-      --nav-bg:     rgba(241,245,251,.9);
-    }
-
-    /* ─── RESET ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
       line-height: 1.7;
       overflow-x: hidden;
-      transition: background var(--transition), color var(--transition);
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-    ul { list-style: none; }
 
-    /* ─── SCROLLBAR ──────────────────────────────────────────── */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 99px; }
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--warm); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 99px; }
 
-    /* ─── NOISE OVERLAY ──────────────────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ─── NAV ────────────────────────────────────────────────── */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: var(--nav-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
+      background: rgba(244,240,235,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
       height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background var(--transition);
+      padding: 0 3rem;
     }
-
     .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -.5px;
-      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: .04em;
+      color: var(--charcoal);
     }
-    .nav-logo span { color: var(--accent); }
-
+    .nav-logo em { font-style: italic; color: var(--gold); }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 2.5rem;
     }
     .nav-links a {
       font-family: 'DM Mono', monospace;
-      font-size: .78rem;
-      color: var(--text-muted);
-      letter-spacing: .03em;
-      transition: color var(--transition);
-      position: relative;
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color var(--t);
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0;
-      width: 0; height: 1px;
-      background: var(--accent);
-      transition: width var(--transition);
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    /* Theme toggle */
-    .theme-toggle {
-      width: 44px; height: 24px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 99px;
-      cursor: pointer;
-      position: relative;
-      transition: background var(--transition);
-      flex-shrink: 0;
-    }
-    .theme-toggle::after {
-      content: '';
-      position: absolute;
-      top: 3px; left: 3px;
-      width: 16px; height: 16px;
-      border-radius: 50%;
-      background: var(--accent);
-      transition: transform var(--transition);
-    }
-    [data-theme="light"] .theme-toggle::after { transform: translateX(20px); }
-
+    .nav-links a:hover { color: var(--charcoal); }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -157,19 +84,17 @@
     }
     .hamburger span {
       display: block;
-      width: 22px; height: 2px;
-      background: var(--text);
+      width: 22px; height: 1.5px;
+      background: var(--charcoal);
       border-radius: 99px;
-      transition: var(--transition);
+      transition: var(--t);
     }
-
-    /* Mobile menu */
     .mobile-menu {
       display: none;
       position: fixed;
       top: 64px; left: 0; right: 0;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
       padding: 1.5rem 2rem;
       z-index: 99;
       flex-direction: column;
@@ -178,625 +103,49 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
       font-family: 'DM Mono', monospace;
-      font-size: .85rem;
-      color: var(--text-dim);
-      letter-spacing: .04em;
-    }
-
-    /* ─── LAYOUT ─────────────────────────────────────────────── */
-    section {
-      position: relative;
-      z-index: 1;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      font-family: 'DM Mono', monospace;
-      font-size: .72rem;
-      color: var(--accent);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 24px; height: 1px;
-      background: var(--accent);
-    }
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
-
-    /* ─── HERO ───────────────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 64px;
-      overflow: hidden;
-    }
-
-    /* Grid background */
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 100%);
-    }
-
-    /* Glow orbs */
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .hero-orb-1 {
-      width: 500px; height: 500px;
-      background: rgba(59,130,246,.12);
-      top: 10%; right: -100px;
-      animation: float1 8s ease-in-out infinite;
-    }
-    .hero-orb-2 {
-      width: 300px; height: 300px;
-      background: rgba(99,102,241,.08);
-      bottom: 10%; left: -80px;
-      animation: float2 10s ease-in-out infinite;
-    }
-    @keyframes float1 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-30px) scale(1.05)} }
-    @keyframes float2 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(25px) scale(.95)} }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: var(--accent-glow);
-      border: 1px solid rgba(59,130,246,.3);
-      border-radius: 99px;
-      padding: .35rem .9rem;
-      font-family: 'DM Mono', monospace;
-      font-size: .72rem;
-      color: var(--accent);
-      letter-spacing: .06em;
-      margin-bottom: 1.8rem;
-      animation: fadeUp .6s .1s both;
-    }
-    .hero-badge .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -2px;
-      color: var(--text);
-      animation: fadeUp .6s .2s both;
-    }
-    .hero-name .accent { color: var(--accent); }
-
-    .hero-subtitle {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      font-weight: 300;
-      color: var(--text-dim);
-      margin-top: .8rem;
-      margin-bottom: 2rem;
-      animation: fadeUp .6s .3s both;
-    }
-    .hero-subtitle strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .hero-desc {
-      max-width: 520px;
-      color: var(--text-muted);
-      font-size: .95rem;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-      animation: fadeUp .6s .4s both;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      animation: fadeUp .6s .5s both;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .75rem 1.6rem;
-      border-radius: var(--radius);
-      font-family: 'DM Mono', monospace;
       font-size: .8rem;
-      letter-spacing: .04em;
-      font-weight: 500;
-      cursor: pointer;
-      border: none;
-      transition: var(--transition);
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 0 24px rgba(59,130,246,.35);
-    }
-    .btn-primary:hover {
-      background: var(--accent-dim);
-      box-shadow: 0 0 36px rgba(59,130,246,.5);
-      transform: translateY(-2px);
-    }
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-dim);
-      border: 1px solid var(--border);
-    }
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem; left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      color: var(--text-muted);
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      letter-spacing: .1em;
-      animation: fadeUp .6s .8s both;
-    }
-    .scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: scrollLine 2s ease-in-out infinite;
-    }
-    @keyframes scrollLine { 0%,100%{opacity:.4;transform:scaleY(.5)} 50%{opacity:1;transform:scaleY(1)} }
-
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(20px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-
-    /* ─── ABOUT ──────────────────────────────────────────────── */
-    #about { padding: 8rem 0; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-avatar {
-      position: relative;
-    }
-    .avatar-wrap {
-      width: 100%;
-      aspect-ratio: 1;
-      max-width: 360px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      position: relative;
-    }
-    .avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      color: var(--text-muted);
-      font-family: 'DM Mono', monospace;
-      font-size: .75rem;
-    }
-    .avatar-icon {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      background: var(--accent-glow);
-      border: 2px solid rgba(59,130,246,.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-    }
-    .avatar-accent {
-      position: absolute;
-      bottom: -12px; right: -12px;
-      width: 80px; height: 80px;
-      border-radius: 12px;
-      background: var(--accent);
-      z-index: -1;
-      opacity: .3;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem;
-      text-align: center;
-    }
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--text-muted);
+      color: var(--mid);
       letter-spacing: .08em;
-      margin-top: .3rem;
+      text-transform: uppercase;
     }
 
-    .about-text p {
-      color: var(--text-dim);
-      margin-bottom: 1.2rem;
-      font-size: .95rem;
-    }
-    .about-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-      margin-top: 1.5rem;
-    }
-    .chip {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 99px;
-      padding: .3rem .85rem;
-      font-family: 'DM Mono', monospace;
-      font-size: .7rem;
-      color: var(--text-dim);
-      letter-spacing: .04em;
-      transition: var(--transition);
-    }
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-glow);
-    }
-
-    /* ─── SKILLS ─────────────────────────────────────────────── */
-    #skills { padding: 6rem 0; background: var(--bg2); }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.2rem;
-      margin-top: 3rem;
-    }
-
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: var(--transition);
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-    .skill-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent-glow), transparent);
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-    .skill-card:hover {
-      border-color: rgba(59,130,246,.4);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,.25);
-    }
-    .skill-card:hover::before { opacity: 1; }
-
-    .skill-icon {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      background: var(--accent-glow);
-      border: 1px solid rgba(59,130,246,.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-    .skill-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: .4rem;
-    }
-    .skill-desc {
-      font-size: .82rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    .skill-bar-wrap {
-      height: 4px;
-      background: var(--bg3);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-    .skill-bar {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), #818cf8);
-      border-radius: 99px;
-      transform-origin: left;
-      transform: scaleX(0);
-      transition: transform 1s cubic-bezier(.4,0,.2,1);
-    }
-    .skill-bar.animate { transform: scaleX(1); }
-
-    /* ─── EXPERIENCE ─────────────────────────────────────────── */
-    #experience { padding: 8rem 0; }
-
-    .timeline {
-      position: relative;
-      margin-top: 3rem;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 16px; top: 0; bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .timeline-item {
-      padding-left: 3.5rem;
-      padding-bottom: 3rem;
-      position: relative;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 8px; top: 4px;
-      width: 17px; height: 17px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 2px solid var(--accent);
-      z-index: 1;
-    }
-    .timeline-item.placeholder::before {
-      border-color: var(--border);
-      background: var(--bg3);
-    }
-
-    .timeline-period {
-      font-family: 'DM Mono', monospace;
-      font-size: .7rem;
-      color: var(--accent);
-      letter-spacing: .08em;
-      margin-bottom: .5rem;
-    }
-    .timeline-role {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: .2rem;
-    }
-    .timeline-company {
-      font-size: .88rem;
-      color: var(--text-dim);
-      margin-bottom: .8rem;
-    }
-    .timeline-body {
-      font-size: .88rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .placeholder-card {
-      background: var(--bg3);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      color: var(--text-muted);
-      font-family: 'DM Mono', monospace;
-      font-size: .78rem;
-    }
-    .placeholder-icon { font-size: 1.4rem; }
-
-    /* ─── PROJECTS ───────────────────────────────────────────── */
-    #projects { padding: 6rem 0; background: var(--bg2); }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.2rem;
-      margin-top: 3rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card:hover {
-      border-color: rgba(59,130,246,.4);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,.25);
-    }
-    .project-tag {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--accent);
-      letter-spacing: .08em;
-      border: 1px solid rgba(59,130,246,.3);
-      border-radius: 99px;
-      padding: .2rem .6rem;
-      margin-bottom: .8rem;
-    }
-    .project-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: .5rem;
-    }
-    .project-desc {
-      font-size: .85rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-    }
-    .stack-chip {
-      font-family: 'DM Mono', monospace;
-      font-size: .62rem;
-      color: var(--text-muted);
-      background: var(--bg3);
-      border-radius: 99px;
-      padding: .2rem .55rem;
-    }
-
-    /* ─── CONTACT ────────────────────────────────────────────── */
-    #contact { padding: 8rem 0; }
-
-    .contact-inner {
-      max-width: 680px;
+    /* ── LAYOUT ── */
+    section { position: relative; }
+    .container {
+      max-width: 1120px;
       margin: 0 auto;
-      text-align: center;
+      padding: 0 3rem;
     }
-    .contact-inner .section-label { justify-content: center; }
-    .contact-inner .section-label::before { display: none; }
-    .contact-inner .section-label::after {
+    .section-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .section-eyebrow::before {
       content: '';
       display: block;
-      width: 24px; height: 1px;
-      background: var(--accent);
+      width: 28px; height: 1px;
+      background: var(--gold);
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 2rem;
     }
 
-    .contact-text {
-      color: var(--text-dim);
-      font-size: .95rem;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-    }
-
-    .contact-cards {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.5rem;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-    .contact-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px var(--accent-glow);
-    }
-    .contact-card-icon {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: var(--accent-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-    }
-    .contact-card-label {
-      font-family: 'DM Mono', monospace;
-      font-size: .65rem;
-      color: var(--text-muted);
-      letter-spacing: .08em;
-    }
-    .contact-card-value {
-      font-size: .88rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    /* ─── FOOTER ─────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
-      font-family: 'DM Mono', monospace;
-      font-size: .7rem;
-      color: var(--text-muted);
-      letter-spacing: .06em;
-    }
-    footer span { color: var(--accent); }
-
-    /* ─── FADE-IN OBSERVER ───────────────────────────────────── */
+    /* ── REVEAL ── */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(28px);
       transition: opacity .7s ease, transform .7s ease;
     }
     .reveal.visible {
@@ -804,386 +153,1078 @@
       transform: none;
     }
 
-    /* ─── RESPONSIVE ─────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .avatar-wrap { max-width: 240px; margin: 0 auto; }
-
-      .hero-name { letter-spacing: -1px; }
-      .hero-scroll { display: none; }
-
-      .about-stats { grid-template-columns: repeat(3, 1fr); }
-
-      .skills-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-
-      #about, #experience, #contact { padding: 5rem 0; }
-      #skills, #projects { padding: 4rem 0; }
-
-      .contact-cards { flex-direction: column; align-items: stretch; }
+        /* ─────────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      padding-top: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
     }
 
-    @media (max-width: 480px) {
-      .container { padding: 0 1.2rem; }
-      .hero-cta { flex-direction: column; }
-      .btn { justify-content: center; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); gap: .6rem; }
-      .stat-num { font-size: 1.4rem; }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 70% at 10% 90%, rgba(184,150,90,.09) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 90% 10%, rgba(184,150,90,.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      height: 1px;
+      background: rgba(184,150,90,.2);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 5rem;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* ── Left: text content ── */
+    .hero-content {
+      min-width: 0;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: .63rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+    }
+
+    .hero-tag::before {
+      content: "◎";
+      font-size: .55rem;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: -.01em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-role {
+      font-family: 'Outfit', sans-serif;
+      font-size: .85rem;
+      font-weight: 300;
+      color: rgba(244,240,235,.5);
+      letter-spacing: .04em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--cream);
+      letter-spacing: -.015em;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-sub {
+      font-size: .97rem;
+      font-weight: 300;
+      color: rgba(244,240,235,.5);
+      max-width: 520px;
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      border-left: 1px solid rgba(184,150,90,.35);
+      padding-left: 1.25rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: .85rem 2rem;
+      border-radius: var(--radius);
+      font-family: 'Outfit', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      transition: background var(--t), transform var(--t);
+    }
+
+    .btn-primary:hover {
+      background: #c9a96a;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: transparent;
+      color: rgba(244,240,235,.7);
+      padding: .85rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(244,240,235,.2);
+      font-family: 'Outfit', sans-serif;
+      font-size: .85rem;
+      font-weight: 300;
+      letter-spacing: .04em;
+      transition: border-color var(--t), color var(--t), transform var(--t);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(244,240,235,.5);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    /* ── Right: photo card ── */
+    .hero-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .75rem;
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem 1.25rem;
+      margin-top: 1.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(244,240,235,.08);
+    }
+    .hero-meta span {
+      font-family: 'DM Mono', monospace;
+      font-size: .66rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(244,240,235,.42);
+      white-space: nowrap;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .hero-photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(184,150,90,.28);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 5 / 6;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(15%) contrast(1.02) brightness(.95);
+      border-radius: 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* ─────────────────────────────────────────────────
+       DIVIDER
+    ───────────────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ─────────────────────────────────────────────────
+       ABOUT
+    ───────────────────────────────────────────────── */
+    #about {
+      padding: 8rem 0;
+      background: var(--cream);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .about-left {
+      position: sticky;
+      top: 90px;
+    }
+    .about-portrait {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(15%) contrast(1.02);
+      border-radius: 2px;
+    }
+    .about-right p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .about-right p:first-of-type {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .about-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    .about-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .about-stat-num sup {
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+    .about-stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .4rem;
+    }
+
+    /* ─────────────────────────────────────────────────
+       CORE STRENGTHS
+    ───────────────────────────────────────────────── */
+    #strengths {
+      padding: 8rem 0;
+      background: var(--warm);
+    }
+    .strengths-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+    .strengths-intro {
+      font-size: .95rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.9;
+    }
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .strength-card {
+      background: var(--warm);
+      padding: 2.5rem;
+      transition: background var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+    .strength-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t);
+    }
+    .strength-card:hover { background: var(--cream); }
+    .strength-card:hover::before { transform: scaleX(1); }
+    .strength-num {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      color: var(--gold);
+      letter-spacing: .12em;
+      margin-bottom: 1.5rem;
+    }
+    .strength-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .strength-desc {
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* ─────────────────────────────────────────────────
+       TECHNICAL EXPERTISE
+    ───────────────────────────────────────────────── */
+    #expertise {
+      padding: 8rem 0;
+      background: var(--cream);
+    }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem 6rem;
+      margin-top: 4rem;
+    }
+    .expertise-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+    .tech-tag {
+      font-size: .8rem;
+      font-weight: 400;
+      color: var(--mid);
+      padding: .35rem .85rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      background: var(--warm);
+      transition: border-color var(--t), color var(--t), background var(--t);
+    }
+    .tech-tag:hover {
+      border-color: var(--gold);
+      color: var(--charcoal);
+      background: var(--gold-dim);
+    }
+
+    /* ─────────────────────────────────────────────────
+       PROFESSIONAL IMPACT
+    ───────────────────────────────────────────────── */
+    #impact {
+      padding: 8rem 0;
+      background: var(--charcoal);
+    }
+    #impact .section-eyebrow { color: var(--gold); }
+    #impact .section-eyebrow::before { background: var(--gold); }
+    #impact .section-heading { color: var(--cream); }
+    .impact-intro {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(244,240,235,.55);
+      line-height: 1.9;
+      max-width: 600px;
+      margin-bottom: 5rem;
+    }
+    .impact-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .impact-item {
+      padding: 2.5rem 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-right: 1px solid rgba(255,255,255,.06);
+      position: relative;
+      transition: background var(--t);
+    }
+    .impact-item:nth-child(even) { border-right: none; }
+    .impact-item:nth-last-child(-n+2) { border-bottom: none; }
+    .impact-item:hover { background: rgba(255,255,255,.02); }
+    .impact-item-icon {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      opacity: .6;
+    }
+    .impact-item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .6rem;
+    }
+    .impact-item-desc {
+      font-size: .85rem;
+      font-weight: 300;
+      color: rgba(244,240,235,.5);
+      line-height: 1.8;
+    }
+
+    /* ─────────────────────────────────────────────────
+       HOW I WORK
+    ───────────────────────────────────────────────── */
+    #process {
+      padding: 8rem 0;
+      background: var(--warm);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8rem;
+      align-items: start;
+      margin-top: 4rem;
+    }
+    .process-left {
+      position: sticky;
+      top: 90px;
+    }
+    .process-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .process-quote-attr {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+      margin-top: 1.5rem;
+    }
+    .process-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .process-item {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .process-item:first-child { border-top: 1px solid var(--rule); }
+    .process-item-num {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      color: var(--gold);
+      letter-spacing: .1em;
+      padding-top: .25rem;
+    }
+    .process-item-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: .5rem;
+    }
+    .process-item-desc {
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* ─────────────────────────────────────────────────
+       CONTACT
+    ───────────────────────────────────────────────── */
+    #contact {
+      padding: 8rem 0;
+      background: var(--cream);
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+    .contact-text {
+      font-size: .95rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.9;
+      margin-bottom: 3rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      background: var(--warm);
+      transition: border-color var(--t), transform var(--t), background var(--t);
+    }
+    .contact-link:hover {
+      border-color: var(--gold);
+      transform: translateX(4px);
+      background: var(--cream);
+    }
+    .contact-link-icon {
+      width: 38px; height: 38px;
+      background: var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .contact-link-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .25rem;
+    }
+    .contact-link-value {
+      font-size: .88rem;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+    .contact-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .contact-cta-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+    .contact-cta-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .contact-cv-note {
+      font-size: .82rem;
+      font-weight: 300;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ─────────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────────── */
+    footer {
+      padding: 2.5rem 3rem;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-left {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(244,240,235,.4);
+    }
+    .footer-left strong { color: rgba(244,240,235,.7); }
+    .footer-right {
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      color: rgba(244,240,235,.3);
+      letter-spacing: .08em;
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 0 1.5rem; }
+      footer { padding: 2rem 1.5rem; }
+
+      #hero { min-height: auto; }
+      .hero-inner { padding: 4rem 1.5rem 3rem; grid-template-columns: 1fr; gap: 3rem; }
+      .hero-photo-side { flex-direction: row; justify-content: flex-start; }
+      .hero-photo-frame { width: 100px; height: 120px; }
+      .hero-photo-caption { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-left { position: relative; top: 0; }
+      .about-portrait { max-width: 280px; }
+      .about-stats { gap: 2rem; }
+
+      .strengths-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+      .strengths-grid { grid-template-columns: 1fr; }
+
+      .expertise-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .impact-list { grid-template-columns: 1fr; }
+      .impact-item { border-right: none !important; }
+      .impact-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.06); }
+      .impact-item:last-child { border-bottom: none; }
+
+      .process-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .process-left { position: relative; top: 0; }
+
+      .contact-layout { grid-template-columns: 1fr; gap: 4rem; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+      .about-stats { flex-direction: column; gap: 1.5rem; }
+      #about, #strengths, #expertise, #impact, #process, #contact { padding: 5rem 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav>
-    <div class="nav-logo">MS<span>.</span></div>
+    <div class="nav-logo">Matteo <em>Solari</em></div>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#impact">Impact</a>
+      <a href="#process">Approach</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
-      <div class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
+    <div id="hamburger" class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
     </div>
   </nav>
-
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about"      onclick="closeMobile()">About</a>
-    <a href="#skills"     onclick="closeMobile()">Skills</a>
-    <a href="#experience" onclick="closeMobile()">Experience</a>
-    <a href="#projects"   onclick="closeMobile()">Projects</a>
-    <a href="#contact"    onclick="closeMobile()">Contact</a>
+    <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="#strengths" onclick="document.getElementById('mobileMenu').classList.remove('open')">Strengths</a>
+    <a href="#expertise" onclick="document.getElementById('mobileMenu').classList.remove('open')">Expertise</a>
+    <a href="#impact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Impact</a>
+    <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Approach</a>
+    <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
   </div>
-
-  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="container hero-inner">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Available for new opportunities
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">ICT Infrastructure Engineer</div>
+        <div class="hero-name">Matteo<br><em>Solari</em></div>
+        <div class="hero-role">
+          <span>Zurich, Switzerland</span>
+        </div>
+        <h1 class="hero-headline">
+          Building resilient infrastructure where reliability, security, and automation play a critical role.
+        </h1>
+        <p class="hero-sub">
+          I design and operate complex IT environments in highly regulated industries, with a strong focus on stability and long-term performance.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Request my CV</a>
+          <a href="#contact" class="btn-secondary">Get in touch to learn more</a>
+        </div>
+        <div class="hero-meta">
+          <span>15+ years experience</span>
+          <span>Regulated financial environments</span>
+          <span>Hybrid infrastructure</span>
+        </div>
       </div>
-      <h1 class="hero-name">Matteo<br><span class="accent">Solari</span></h1>
-      <p class="hero-subtitle"><strong>IT Infrastructure Engineer</strong> — Zürich, Switzerland 🇨🇭</p>
-      <p class="hero-desc">Designing, deploying, and securing enterprise infrastructure solutions. Passionate about cloud architecture, automation, and building systems that scale.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Get in touch
-        </a>
-        <a href="#experience" class="btn btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          View experience
-        </a>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <img src="profile.jpeg" alt="Matteo Solari" class="hero-photo">
+        </div>
       </div>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>scroll</span>
     </div>
   </section>
 
-  <!-- ── ABOUT ─────────────────────────────────────────────────── -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-avatar reveal">
-          <div class="avatar-wrap">
-            <div class="avatar-placeholder">
-              <div class="avatar-icon">👤</div>
-              <span>Photo coming soon</span>
-            </div>
-          </div>
-          <div class="avatar-accent"></div>
+        <div class="about-left reveal">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-heading">Senior engineer,<br><em style="font-style:italic;color:var(--gold)">trusted operator.</em></h2>
+          
+        </div>
+        <div class="about-right reveal" data-delay="100">
+          <p>
+            With over 15 years in IT infrastructure, I have built a career around operating complex, business-critical environments with calm and precision. My work spans on-premises, hybrid, and cloud-integrated platforms — always with a focus on what actually matters: systems that stay up, stay secure, and stay compliant.
+          </p>
+          <p>
+            The last seven years have been spent in financial services, where regulatory demands and service reliability are not optional. I have led audits, driven security hardening programs, managed disaster recovery, and owned infrastructure transitions that could not afford to fail. That context has shaped how I think about infrastructure: carefully, with full ownership, and always with the long term in mind.
+          </p>
+          <p>
+            I am pragmatic rather than theoretical. I care about documentation, about maintainability, about handovers that actually work. I build things so that the next person — or future me — is not left guessing.
+          </p>
           <div class="about-stats">
-            <div class="stat-card">
-              <div class="stat-num">5+</div>
-              <div class="stat-label">YRS EXP</div>
+            <div>
+              <div class="about-stat-num">15<sup>+</sup></div>
+              <div class="about-stat-label">Years of Experience</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-num">30+</div>
-              <div class="stat-label">PROJECTS</div>
+            <div>
+              <div class="about-stat-num">7<sup>+</sup></div>
+              <div class="about-stat-label">Years in Finance Sector</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-num">CH</div>
-              <div class="stat-label">BASED</div>
+            <div>
+              <div class="about-stat-num">3</div>
+              <div class="about-stat-label">Countries Supported</div>
             </div>
-          </div>
-        </div>
-
-        <div class="about-text reveal">
-          <div class="section-label">About me</div>
-          <h2 class="section-title">Building infrastructure<br>that doesn't break.</h2>
-          <p>I'm Matteo, an IT Infrastructure Engineer based in Zürich with a passion for designing resilient, secure, and automated infrastructure environments. I thrive at the intersection of on-premises systems and cloud-native solutions.</p>
-          <p>From Active Directory to Azure hybrid cloud, from VMware clusters to PowerShell automation pipelines — I take ownership of the full infrastructure lifecycle. I believe that great infrastructure is invisible: it just works.</p>
-          <p>Outside of work, I enjoy contributing to open-source projects, staying up to date with cloud security trends, and exploring the Swiss alps. 🏔️</p>
-          <div class="about-chips">
-            <span class="chip">🌐 Hybrid Cloud</span>
-            <span class="chip">🔐 Zero Trust</span>
-            <span class="chip">⚙️ Automation</span>
-            <span class="chip">📡 Networking</span>
-            <span class="chip">🖥️ Virtualization</span>
-            <span class="chip">🇨🇭 Zürich-based</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SKILLS ─────────────────────────────────────────────────── -->
-  <section id="skills">
+  <!-- STRENGTHS -->
+  <section id="strengths">
+    <div class="container">
+      <div class="strengths-header">
+        <div class="reveal">
+          <div class="section-eyebrow">Core Strengths</div>
+          <h2 class="section-heading">Where I<br>add value.</h2>
+        </div>
+        <div class="strengths-intro reveal" data-delay="100">
+          My strengths are not a list of buzzwords — they are the result of years spent solving real infrastructure problems in demanding environments. Each reflects a pattern of thinking and delivery that I bring consistently.
+        </div>
+      </div>
+      <div class="strengths-grid">
+        <div class="strength-card reveal">
+          <div class="strength-num">01</div>
+          <div class="strength-title">Reliability</div>
+          <div class="strength-desc">I have a disciplined approach to uptime. Critical financial services run on the systems I manage, which means failures are not abstract — they have consequences. I prioritise preventive operations, structured change management, and robust documentation to keep environments stable.</div>
+        </div>
+        <div class="strength-card reveal" data-delay="80">
+          <div class="strength-num">02</div>
+          <div class="strength-title">Security</div>
+          <div class="strength-desc">Security is embedded into how I operate, not added later. I have led ISO 27001-aligned initiatives, managed PKI deployments, coordinated vulnerability remediation after penetration tests, and enforced firewall governance — always within regulatory frameworks.</div>
+        </div>
+        <div class="strength-card reveal" data-delay="160">
+          <div class="strength-num">03</div>
+          <div class="strength-title">Automation</div>
+          <div class="strength-desc">I automate what should be automated. Using PowerShell, I have reduced manual overhead in AD management, security reporting, and audit preparation — building solutions that are readable, documented, and maintainable by others.</div>
+        </div>
+        <div class="strength-card reveal" data-delay="0">
+          <div class="strength-num">04</div>
+          <div class="strength-title">Hybrid Infrastructure</div>
+          <div class="strength-desc">I am equally comfortable on-premises and in the cloud. I have administered Windows Server, VMware, Active Directory, Azure, and Microsoft 365 as interconnected systems — designing and maintaining environments that span both worlds effectively.</div>
+        </div>
+        <div class="strength-card reveal" data-delay="80">
+          <div class="strength-num">05</div>
+          <div class="strength-title">Operational Ownership</div>
+          <div class="strength-desc">I treat infrastructure as mine to own, not just maintain. From audits to data center relocations, I take responsibility for outcomes. That includes proactive monitoring, honest incident reporting, and always knowing the state of what I manage.</div>
+        </div>
+        <div class="strength-card reveal" data-delay="160">
+          <div class="strength-num">06</div>
+          <div class="strength-title">Problem Solving</div>
+          <div class="strength-desc">Infrastructure problems often arrive without a clear manual. I work methodically, stay calm under pressure, and know when to escalate. My escalation track record includes direct collaboration with Microsoft engineers on complex Exchange migrations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise">
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Technical skills</div>
-        <h2 class="section-title">What I work with</h2>
+        <div class="section-eyebrow">Technical Expertise</div>
+        <h2 class="section-heading">Technology stack.</h2>
       </div>
-      <div class="skills-grid">
-
-        <div class="skill-card reveal" data-delay="0">
-          <div class="skill-icon">🪟</div>
-          <div class="skill-name">Windows Server</div>
-          <div class="skill-desc">Active Directory, Group Policy, DNS/DHCP, WSUS, Hyper-V — full lifecycle management of Windows Server environments.</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-width="92"></div></div>
+      <div class="expertise-grid">
+        <div class="reveal">
+          <div class="expertise-group-label">Infrastructure & Platforms</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Windows Server</span>
+            <span class="tech-tag">VMware vSphere</span>
+            <span class="tech-tag">Active Directory</span>
+            <span class="tech-tag">Microsoft Exchange</span>
+            <span class="tech-tag">Microsoft Azure</span>
+            <span class="tech-tag">Microsoft 365</span>
+            <span class="tech-tag">NetApp Storage</span>
+            <span class="tech-tag">Veeam</span>
+          </div>
         </div>
-
-        <div class="skill-card reveal" data-delay="100">
-          <div class="skill-icon">☁️</div>
-          <div class="skill-name">Microsoft Azure</div>
-          <div class="skill-desc">Azure AD, Virtual Machines, Azure Networking, ARM templates, Azure Policy, Defender for Cloud, hybrid connectivity.</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label">Security & Governance</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">PKI / Certificate Mgmt</span>
+            <span class="tech-tag">ISO 27001</span>
+            <span class="tech-tag">ITIL</span>
+            <span class="tech-tag">GDPR</span>
+            <span class="tech-tag">Checkpoint</span>
+            <span class="tech-tag">Fortinet</span>
+            <span class="tech-tag">WAF</span>
+            <span class="tech-tag">MFA / Smartcard</span>
+          </div>
         </div>
-
-        <div class="skill-card reveal" data-delay="200">
-          <div class="skill-icon">🖥️</div>
-          <div class="skill-name">VMware vSphere</div>
-          <div class="skill-desc">ESXi, vCenter, vSAN, NSX-T, vMotion, HA/DRS clustering, and full datacenter virtualization strategies.</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+        <div class="reveal" data-delay="0">
+          <div class="expertise-group-label">Automation & Operations</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">PowerShell</span>
+            <span class="tech-tag">SCCM</span>
+            <span class="tech-tag">Disaster Recovery</span>
+            <span class="tech-tag">RPO / RTO Management</span>
+            <span class="tech-tag">PRTG Monitoring</span>
+            <span class="tech-tag">Audit Documentation</span>
+          </div>
         </div>
-
-        <div class="skill-card reveal" data-delay="0">
-          <div class="skill-icon">📡</div>
-          <div class="skill-name">Networking</div>
-          <div class="skill-desc">Cisco & HP switching, VLANs, routing protocols (OSPF, BGP), SD-WAN, firewalls, VPN, and network monitoring.</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label">Access & Networking</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Citrix XenApp / VDI</span>
+            <span class="tech-tag">NetScaler</span>
+            <span class="tech-tag">SSO</span>
+            <span class="tech-tag">Cisco</span>
+            <span class="tech-tag">VLANs</span>
+            <span class="tech-tag">VPN</span>
+            <span class="tech-tag">MDM</span>
+          </div>
         </div>
-
-        <div class="skill-card reveal" data-delay="100">
-          <div class="skill-icon">🔐</div>
-          <div class="skill-name">Security</div>
-          <div class="skill-desc">Identity management, MFA, privileged access, endpoint security, SIEM integration, and compliance frameworks (ISO 27001).</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div>
-        </div>
-
-        <div class="skill-card reveal" data-delay="200">
-          <div class="skill-icon">⚡</div>
-          <div class="skill-name">PowerShell</div>
-          <div class="skill-desc">Infrastructure automation, DSC, Azure automation runbooks, reporting, and tooling development for operational efficiency.</div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── EXPERIENCE ─────────────────────────────────────────────── -->
-  <section id="experience">
+  <!-- IMPACT -->
+  <section id="impact">
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Career</div>
-        <h2 class="section-title">Professional experience</h2>
+        <div class="section-eyebrow">Professional Impact</div>
+        <h2 class="section-heading">What I have delivered.</h2>
+        <p class="impact-intro">
+          Across regulated financial environments and complex international deployments, here is the kind of work I have driven — not titles or job descriptions, but outcomes.
+        </p>
       </div>
-      <div class="timeline">
-
-        <div class="timeline-item reveal">
-          <div class="timeline-period">2022 — Present</div>
-          <div class="timeline-role">IT Infrastructure Engineer</div>
-          <div class="timeline-company">Company Name · Zürich, CH</div>
-          <div class="timeline-body">
-            <div class="placeholder-card">
-              <span class="placeholder-icon">📋</span>
-              Add your experience details here — responsibilities, achievements, and tech stack.
-            </div>
-          </div>
+      <div class="impact-list">
+        <div class="impact-item reveal">
+          <div class="impact-item-icon">⬡</div>
+          <div class="impact-item-title">Hybrid Infrastructure Ownership</div>
+          <div class="impact-item-desc">End-to-end administration and continuous optimization of hybrid ecosystems combining Windows Server, VMware, Azure, and Microsoft 365 — ensuring 99.9% availability for financial services.</div>
         </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-period">2019 — 2022</div>
-          <div class="timeline-role">Systems Administrator</div>
-          <div class="timeline-company">Company Name · Switzerland</div>
-          <div class="timeline-body">
-            <div class="placeholder-card">
-              <span class="placeholder-icon">📋</span>
-              Add your experience details here — responsibilities, achievements, and tech stack.
-            </div>
-          </div>
+        <div class="impact-item reveal" data-delay="80">
+          <div class="impact-item-icon">⬡</div>
+          <div class="impact-item-title">Cross-Forest & Platform Migrations</div>
+          <div class="impact-item-desc">Orchestrated multi-forest domain migrations and Exchange Online transitions for 1,000+ users following corporate acquisitions — maintaining business continuity throughout.</div>
         </div>
-
-        <div class="timeline-item reveal placeholder">
-          <div class="timeline-period">2017 — 2019</div>
-          <div class="timeline-role">Junior IT Technician</div>
-          <div class="timeline-company">Company Name · Switzerland</div>
-          <div class="timeline-body">
-            <div class="placeholder-card">
-              <span class="placeholder-icon">📋</span>
-              Add your experience details here — responsibilities, achievements, and tech stack.
-            </div>
-          </div>
+        <div class="impact-item reveal">
+          <div class="impact-item-icon">⬡</div>
+          <div class="impact-item-title">Security Hardening & Compliance</div>
+          <div class="impact-item-desc">Led vulnerability remediation programs following penetration tests, PKI deployments, network segmentation aligned with ISO 27001, and firewall governance under international financial regulations.</div>
         </div>
-
+        <div class="impact-item reveal" data-delay="80">
+          <div class="impact-item-icon">⬡</div>
+          <div class="impact-item-title">Disaster Recovery Governance</div>
+          <div class="impact-item-desc">Designed and maintained enterprise backup architectures using Veeam, with regular failover testing and strict RPO/RTO targets — ensuring recovery readiness at all times.</div>
+        </div>
+        <div class="impact-item reveal">
+          <div class="impact-item-icon">⬡</div>
+          <div class="impact-item-title">Audit Support & Documentation</div>
+          <div class="impact-item-desc">Served as technical lead for external ISO 27001 and GDPR audits — building the documentation frameworks, incident records, and infrastructure transparency that auditors require.</div>
+        </div>
+        <div class="impact-item reveal" data-delay="80">
+          <div class="impact-item-icon">⬡</div>
+          <div class="impact-item-title">Data Center & Infrastructure Transitions</div>
+          <div class="impact-item-desc">Coordinated full data center relocations covering VMware environments, physical servers, storage, and networking — managing complex transitions with minimal disruption to operations.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── PROJECTS ────────────────────────────────────────────────── -->
-  <section id="projects">
+  <!-- PROCESS -->
+  <section id="process">
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Projects</div>
-        <h2 class="section-title">What I've built</h2>
+        <div class="section-eyebrow">How I Work</div>
+        <h2 class="section-heading">My working<br>approach.</h2>
       </div>
-      <div class="projects-grid">
-
-        <div class="project-card reveal">
-          <div class="project-tag">AUTOMATION</div>
-          <div class="project-title">AD User Lifecycle Automation</div>
-          <div class="project-desc">PowerShell-based solution for fully automated Active Directory user provisioning, modification, and off-boarding integrated with HR systems.</div>
-          <div class="project-stack">
-            <span class="stack-chip">PowerShell</span>
-            <span class="stack-chip">Active Directory</span>
-            <span class="stack-chip">Azure AD</span>
+      <div class="process-grid">
+        <div class="process-left reveal" data-delay="0">
+          <p class="process-quote">
+            "Good infrastructure is invisible when it works, and explainable when it does not."
+          </p>
+          <div class="process-quote-attr">— A principle I work by</div>
+        </div>
+        <div class="process-items">
+          <div class="process-item reveal">
+            <div class="process-item-num">01</div>
+            <div>
+              <div class="process-item-title">Full Ownership, No Hand-Waving</div>
+              <div class="process-item-desc">I take responsibility for the systems I manage. That means staying informed about their state, being accountable for outcomes, and not delegating problems upward unnecessarily. If I own it, I know it.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="60">
+            <div class="process-item-num">02</div>
+            <div>
+              <div class="process-item-title">Calm Under Pressure</div>
+              <div class="process-item-desc">Incidents in financial environments have real consequences. I approach them methodically — isolating the problem, communicating clearly, and focusing on resolution rather than noise. I do not panic; I diagnose.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="120">
+            <div class="process-item-num">03</div>
+            <div>
+              <div class="process-item-title">Collaborative by Default</div>
+              <div class="process-item-desc">I have worked alongside developers, finance teams, auditors, and external providers. I adapt my communication to the audience, support knowledge transfer genuinely, and treat team success as the actual goal.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="180">
+            <div class="process-item-num">04</div>
+            <div>
+              <div class="process-item-title">Structured & Documentable</div>
+              <div class="process-item-desc">I believe infrastructure that is not documented is infrastructure that is fragile. I invest in clear documentation not as a formality, but because it directly impacts reliability, onboarding, and audit outcomes.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="240">
+            <div class="process-item-num">05</div>
+            <div>
+              <div class="process-item-title">Continuously Learning</div>
+              <div class="process-item-desc">Technology moves fast. I stay current — through certifications, self-study, and genuine curiosity. My current focus is deepening Azure expertise. I do not wait for training budgets; I invest in myself.</div>
+            </div>
           </div>
         </div>
-
-        <div class="project-card reveal">
-          <div class="project-tag">CLOUD</div>
-          <div class="project-title">Azure Hybrid Landing Zone</div>
-          <div class="project-desc">Designed and deployed a hybrid Azure landing zone with hub-and-spoke networking, Azure Firewall, and ExpressRoute connectivity.</div>
-          <div class="project-stack">
-            <span class="stack-chip">Azure</span>
-            <span class="stack-chip">ARM Templates</span>
-            <span class="stack-chip">NSG</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-tag">INFRASTRUCTURE</div>
-          <div class="project-title">vSphere Cluster Migration</div>
-          <div class="project-desc">Led end-to-end migration of legacy ESXi 6.5 cluster to vSphere 8 with vSAN HCI implementation and zero-downtime workload migration.</div>
-          <div class="project-stack">
-            <span class="stack-chip">VMware</span>
-            <span class="stack-chip">vSAN</span>
-            <span class="stack-chip">vCenter</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── CONTACT ─────────────────────────────────────────────────── -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="contact-inner reveal">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Let's connect</h2>
-        <p class="contact-text">
-          Whether you have a project in mind, want to discuss infrastructure strategy, or just want to say hi — my inbox is always open.
-        </p>
-        <div class="contact-cards">
-          <a href="mailto:matteo.solari@email.com" class="contact-card">
-            <div class="contact-card-icon">✉️</div>
-            <div>
-              <div class="contact-card-label">EMAIL</div>
-              <div class="contact-card-value">matteo.solari@email.com</div>
-            </div>
-          </a>
-          <a href="https://linkedin.com/in/matteosolari" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-card-icon">💼</div>
-            <div>
-              <div class="contact-card-label">LINKEDIN</div>
-              <div class="contact-card-value">linkedin.com/in/matteosolari</div>
-            </div>
-          </a>
+      <div class="contact-layout">
+        <div class="reveal">
+          <div class="section-eyebrow">Contact</div>
+          <div class="contact-cta-heading">Let's have a<br><em>real conversation.</em></div>
+          <p class="contact-text" style="margin-top:1.5rem">
+            If you would like to know more about my background, experience, or receive my full CV, feel free to get in touch. I am open to relevant opportunities and happy to discuss what I can bring to your team.
+          </p>
+          <p class="contact-cv-note">Detailed CV available upon request.</p>
+        </div>
+        <div class="reveal" data-delay="100">
+          <div class="contact-links">
+            <a href="mailto:msolarich83@gmail.com" class="contact-link">
+              <div class="contact-link-icon">✉</div>
+              <div>
+                <div class="contact-link-label">Email</div>
+                <div class="contact-link-value">msolarich83@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/matteo-solari/" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">in</div>
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-value">linkedin.com/in/matteo-solari</div>
+              </div>
+            </a>
+            <a href="mailto:msolarich83@gmail.com?subject=CV Request — Matteo Solari" class="contact-link" style="border-color:var(--gold);background:var(--gold-dim)">
+              <div class="contact-link-icon" style="background:var(--gold);color:white">→</div>
+              <div>
+                <div class="contact-link-label">Request CV</div>
+                <div class="contact-link-value">Send a CV request by email</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ──────────────────────────────────────────────────── -->
+  <!-- FOOTER -->
   <footer>
-    <span>Matteo Solari</span> · IT Infrastructure Engineer · Zürich, Switzerland · <span>2025</span>
+    <div class="footer-left"><strong>Matteo Solari</strong> — ICT Infrastructure Engineer, Zurich</div>
+    <div class="footer-right">© 2025 · All rights reserved</div>
   </footer>
 
-  <!-- ── JS ─────────────────────────────────────────────────────── -->
   <script>
-    // ─── THEME TOGGLE ──────────────────────────────────────────
-    const html   = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-    const saved  = localStorage.getItem('theme') || 'dark';
-    html.dataset.theme = saved;
-
-    toggle.addEventListener('click', () => {
-      const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
-      html.dataset.theme = next;
-      localStorage.setItem('theme', next);
-    });
-
-    // ─── HAMBURGER ─────────────────────────────────────────────
-    const hamburger   = document.getElementById('hamburger');
-    const mobileMenu  = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    function closeMobile() { mobileMenu.classList.remove('open'); }
-
-    // ─── SCROLL REVEAL ─────────────────────────────────────────
+    // Scroll reveal
     const revealEls = document.querySelectorAll('.reveal');
-    const observer  = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
         if (e.isIntersecting) {
-          const delay = e.target.dataset.delay || 0;
-          setTimeout(() => e.target.classList.add('visible'), +delay);
+          const delay = parseInt(e.target.dataset.delay || '0');
+          setTimeout(() => e.target.classList.add('visible'), delay);
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     revealEls.forEach(el => observer.observe(el));
 
-    // ─── SKILL BAR ANIMATION ───────────────────────────────────
-    const bars = document.querySelectorAll('.skill-bar');
-    const barObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const bar = e.target;
-          const w   = bar.dataset.width;
-          bar.style.width = w + '%';
-          setTimeout(() => bar.classList.add('animate'), 100);
-          barObserver.unobserve(bar);
-        }
-      });
-    }, { threshold: 0.5 });
-    bars.forEach(b => barObserver.observe(b));
+    // Hero immediate reveal
+    document.querySelectorAll('#hero .hero-content > *').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .6s ease, transform .6s ease';
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }, 200 + i * 120);
+    });
 
-    // ─── ACTIVE NAV LINK ───────────────────────────────────────
-    const sections  = document.querySelectorAll('section[id]');
-    const navLinks  = document.querySelectorAll('.nav-links a');
+    // Active nav highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
     const secObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           navLinks.forEach(a => {
             a.style.color = '';
-            if (a.getAttribute('href') === '#' + e.target.id) {
-              a.style.color = 'var(--text)';
-            }
+            if (a.getAttribute('href') === '#' + e.target.id) a.style.color = 'var(--charcoal)';
           });
         }
       });
