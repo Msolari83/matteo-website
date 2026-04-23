@@ -939,6 +939,13 @@
     <a href="#impact" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.impact">Impact</a>
     <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.process">Approach</a>
     <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.contact">Contact</a>
+    <div class="lang-switcher" style="margin-left:0; margin-top:.5rem; padding-top:1rem; border-top:1px solid var(--rule);">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('it')">IT</button>
+    </div>
   </div>
   <!-- HERO -->
   <section id="hero">
@@ -1480,9 +1487,9 @@
     currentLang = lang;
     const t = translations[lang];
 
-    // Update lang buttons
+    // Update lang buttons (both desktop and mobile)
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
     });
 
     // Update all elements with data-i18n
