@@ -61,7 +61,7 @@
       color: var(--charcoal);
       white-space: nowrap;
     }
-    .nav-logo em { font-style: italic; color: #8a6a30; font-size: .85em; font-weight: 700; }
+    .nav-logo em { color: #8a6a30; font-size: .85em; font-weight: 700; font-style: normal; font-family: 'Cormorant Garamond', serif; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -249,6 +249,16 @@
       color: rgba(244,240,235,.5);
       letter-spacing: .04em;
       margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+    .hero-personal {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .95rem;
+      color: rgba(184,150,90,.6);
+      letter-spacing: .02em;
     }
 
     .hero-headline {
@@ -460,7 +470,7 @@
     ───────────────────────────────────────────────── */
     #strengths {
       padding: 8rem 0;
-      background: var(--warm);
+      background: var(--cream);
     }
     .strengths-header {
       display: grid;
@@ -483,7 +493,7 @@
       border: 1px solid var(--rule);
     }
     .strength-card {
-      background: var(--warm);
+      background: var(--cream);
       padding: 2.5rem;
       transition: background var(--t);
       position: relative;
@@ -557,7 +567,7 @@
       padding: .35rem .85rem;
       border: 1px solid var(--rule);
       border-radius: 2px;
-      background: var(--warm);
+      background: var(--cream);
       transition: border-color var(--t), color var(--t), background var(--t);
     }
     .tech-tag:hover {
@@ -571,15 +581,15 @@
     ───────────────────────────────────────────────── */
     #impact {
       padding: 8rem 0;
-      background: var(--charcoal);
+      background: var(--cream);
     }
     #impact .section-eyebrow { color: var(--gold); }
     #impact .section-eyebrow::before { background: var(--gold); }
-    #impact .section-heading { color: var(--cream); }
+    #impact .section-heading { color: var(--charcoal); }
     .impact-intro {
       font-size: .95rem;
       font-weight: 300;
-      color: rgba(244,240,235,.55);
+      color: var(--mid);
       line-height: 1.9;
       max-width: 600px;
       margin-bottom: 5rem;
@@ -588,34 +598,35 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
-      border: 1px solid rgba(255,255,255,.06);
+      border: 1px solid var(--rule);
     }
     .impact-item {
       padding: 2.5rem 3rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      border-right: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
       position: relative;
       transition: background var(--t);
     }
     .impact-item:nth-child(even) { border-right: none; }
     .impact-item:nth-last-child(-n+2) { border-bottom: none; }
-    .impact-item:hover { background: rgba(255,255,255,.02); }
+    .impact-item:hover { background: var(--warm); }
     .impact-item-icon {
       font-size: 1.1rem;
       margin-bottom: 1rem;
-      opacity: .6;
+      opacity: .4;
+      color: var(--gold);
     }
     .impact-item-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
       font-weight: 400;
-      color: var(--cream);
+      color: var(--charcoal);
       margin-bottom: .6rem;
     }
     .impact-item-desc {
       font-size: .85rem;
       font-weight: 300;
-      color: rgba(244,240,235,.5);
+      color: var(--mid);
       line-height: 1.8;
     }
 
@@ -624,7 +635,7 @@
     ───────────────────────────────────────────────── */
     #process {
       padding: 8rem 0;
-      background: var(--warm);
+      background: var(--cream);
     }
     .process-grid {
       display: grid;
@@ -719,7 +730,7 @@
       padding: 1.25rem 1.5rem;
       border: 1px solid var(--rule);
       border-radius: var(--radius);
-      background: var(--warm);
+      background: var(--cream);
       transition: border-color var(--t), transform var(--t), background var(--t);
     }
     .contact-link:hover {
@@ -839,7 +850,7 @@
 
       .impact-list { grid-template-columns: 1fr; }
       .impact-item { border-right: none !important; }
-      .impact-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.06); }
+      .impact-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
       .impact-item:last-child { border-bottom: none; }
 
       .process-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -861,7 +872,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">ICT Infrastructure Engineer <em>| Hybrid Cloud • Automation • Security</em></div>
+    <div class="nav-logo">ICT Infrastructure Engineer | <em>Hybrid Infrastructure &amp; Security</em></div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#strengths">Strengths</a>
@@ -895,12 +906,13 @@
         <div class="hero-name">Matteo<br><em>Solari</em></div>
         <div class="hero-role">
           <span>Zurich, Switzerland</span>
+          <span class="hero-personal">Dedicated husband, proud father, resilient engineer.</span>
         </div>
         <h1 class="hero-headline">
           Building resilient infrastructure where reliability, security, and automation play a critical role.
         </h1>
         <p class="hero-sub">
-          I design and operate complex IT environments in highly regulated industries, with a strong focus on stability and long-term performance.
+          Designing resilient infrastructure for regulated environments. I operate and secure mission-critical hybrid platforms across on-premises and cloud, ensuring stability, compliance, and long-term performance.
         </p>
         <div class="hero-btns">
           <a href="#contact" class="btn-primary">Request my CV</a>
