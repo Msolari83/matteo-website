@@ -531,8 +531,8 @@
     }
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem 6rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 4rem;
       margin-top: 4rem;
     }
     .expertise-group-label {
@@ -835,7 +835,7 @@
       .strengths-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
       .strengths-grid { grid-template-columns: 1fr; }
 
-      .expertise-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
 
       .impact-list { grid-template-columns: 1fr; }
       .impact-item { border-right: none !important; }
@@ -853,6 +853,7 @@
       .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
       .about-stats { flex-direction: column; gap: 1.5rem; }
       #about, #strengths, #expertise, #impact, #process, #contact { padding: 5rem 0; }
+      .expertise-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1010,58 +1011,78 @@
     <div class="container">
       <div class="reveal">
         <div class="section-eyebrow">Technical Expertise</div>
-        <h2 class="section-heading">Technology stack.</h2>
+        <h2 class="section-heading">Architecture &amp; stack.</h2>
       </div>
       <div class="expertise-grid">
-        <div class="reveal">
-          <div class="expertise-group-label">Infrastructure & Platforms</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">Windows Server</span>
-            <span class="tech-tag">VMware vSphere</span>
-            <span class="tech-tag">Active Directory</span>
-            <span class="tech-tag">Microsoft Exchange</span>
-            <span class="tech-tag">Microsoft Azure</span>
-            <span class="tech-tag">Microsoft 365</span>
-            <span class="tech-tag">NetApp Storage</span>
-            <span class="tech-tag">Veeam</span>
-          </div>
-        </div>
-        <div class="reveal" data-delay="80">
-          <div class="expertise-group-label">Security & Governance</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">PKI / Certificate Mgmt</span>
-            <span class="tech-tag">ISO 27001</span>
-            <span class="tech-tag">ITIL</span>
-            <span class="tech-tag">GDPR</span>
-            <span class="tech-tag">Checkpoint</span>
-            <span class="tech-tag">Fortinet</span>
-            <span class="tech-tag">WAF</span>
-            <span class="tech-tag">MFA / Smartcard</span>
-          </div>
-        </div>
+
         <div class="reveal" data-delay="0">
-          <div class="expertise-group-label">Automation & Operations</div>
+          <div class="expertise-group-label">Infrastructure &amp; Platforms</div>
           <div class="expertise-tags">
-            <span class="tech-tag">PowerShell</span>
-            <span class="tech-tag">SCCM</span>
-            <span class="tech-tag">Disaster Recovery</span>
-            <span class="tech-tag">RPO / RTO Management</span>
-            <span class="tech-tag">PRTG Monitoring</span>
-            <span class="tech-tag">Audit Documentation</span>
+            <span class="tech-tag">Hybrid Infrastructure Design</span>
+            <span class="tech-tag">Windows Server (2008–2022)</span>
+            <span class="tech-tag">VMware vSphere / ESXi</span>
+            <span class="tech-tag">Microsoft Hyper-V</span>
+            <span class="tech-tag">NetApp SAN / NAS Storage</span>
+            <span class="tech-tag">Veeam Backup &amp; Replication</span>
           </div>
         </div>
+
         <div class="reveal" data-delay="80">
-          <div class="expertise-group-label">Access & Networking</div>
+          <div class="expertise-group-label">Cloud &amp; Modern Workplace</div>
           <div class="expertise-tags">
-            <span class="tech-tag">Citrix XenApp / VDI</span>
-            <span class="tech-tag">NetScaler</span>
-            <span class="tech-tag">SSO</span>
-            <span class="tech-tag">Cisco</span>
-            <span class="tech-tag">VLANs</span>
-            <span class="tech-tag">VPN</span>
-            <span class="tech-tag">MDM</span>
+            <span class="tech-tag">Microsoft Azure (IaaS / PaaS)</span>
+            <span class="tech-tag">Azure AD &amp; Conditional Access</span>
+            <span class="tech-tag">Microsoft 365 (Exchange Online, Intune, Teams)</span>
+            <span class="tech-tag">Entra ID &amp; Hybrid Identity</span>
+            <span class="tech-tag">Cross-Forest Migrations</span>
           </div>
         </div>
+
+        <div class="reveal" data-delay="0">
+          <div class="expertise-group-label">Security &amp; Compliance</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Security Governance (ISO 27001, GDPR, ITIL)</span>
+            <span class="tech-tag">PKI &amp; Certificate Lifecycle</span>
+            <span class="tech-tag">Vulnerability Management</span>
+            <span class="tech-tag">Firewall &amp; Perimeter (Checkpoint, Fortinet)</span>
+            <span class="tech-tag">MFA / Smartcard / Zero Trust</span>
+            <span class="tech-tag">Audit &amp; Compliance Support</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label">Identity &amp; Access Management</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Active Directory &amp; Identity Services</span>
+            <span class="tech-tag">SSO &amp; Federation</span>
+            <span class="tech-tag">Citrix XenApp / VDI &amp; NetScaler</span>
+            <span class="tech-tag">MDM &amp; Endpoint Management</span>
+            <span class="tech-tag">Privileged Access Controls</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="0">
+          <div class="expertise-group-label">Resilience &amp; Operations</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Disaster Recovery Strategy (RPO / RTO)</span>
+            <span class="tech-tag">Business Continuity Planning</span>
+            <span class="tech-tag">Infrastructure Monitoring (PRTG)</span>
+            <span class="tech-tag">SCCM / Endpoint Deployment</span>
+            <span class="tech-tag">Incident &amp; Change Management</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label">Automation &amp; Networking</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">PowerShell Scripting &amp; Automation</span>
+            <span class="tech-tag">Network Segmentation &amp; VLANs</span>
+            <span class="tech-tag">VPN &amp; Remote Access</span>
+            <span class="tech-tag">Cisco Networking</span>
+            <span class="tech-tag">Infrastructure-as-Code (Terraform basics)</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
