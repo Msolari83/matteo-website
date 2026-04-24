@@ -281,8 +281,9 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: .95rem;
-      color: rgba(184,150,90,.6);
+      color: rgba(184,150,90,.82);
       letter-spacing: .02em;
+      font-weight: 400;
     }
 
     .hero-headline {
@@ -916,9 +917,9 @@
     <div class="nav-links">
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#strengths" data-i18n="nav.strengths">Strengths</a>
-      <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
       <a href="#impact" data-i18n="nav.impact">Impact</a>
       <a href="#process" data-i18n="nav.process">Approach</a>
+      <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
       <div class="lang-switcher">
         <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -935,9 +936,9 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.about">About</a>
     <a href="#strengths" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.strengths">Strengths</a>
-    <a href="#expertise" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.expertise">Expertise</a>
     <a href="#impact" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.impact">Impact</a>
     <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.process">Approach</a>
+    <a href="#expertise" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.expertise">Expertise</a>
     <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.contact">Contact</a>
     <div class="lang-switcher" style="margin-left:0; margin-top:.5rem; padding-top:1rem; border-top:1px solid var(--rule);">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -960,7 +961,7 @@
         <div class="hero-name">Matteo<br><em>Solari</em></div>
         <div class="hero-role">
           <span>Zurich, Switzerland</span>
-          <span class="hero-personal" data-i18n="hero.personal">Dedicated husband | Proud father | Resilient engineer</span>
+          <span class="hero-personal" data-i18n="hero.personal">Happy husband | Proud father | Resilient engineer</span>
         </div>
         <h1 class="hero-headline" data-i18n="hero.headline">
           Building resilient infrastructure where reliability, security, and automation play a critical role.
@@ -969,8 +970,7 @@
           Designing resilient infrastructure for regulated environments. I operate and secure mission-critical hybrid platforms across on-premises and cloud, ensuring stability, compliance, and long-term performance.
         </p>
         <div class="hero-btns">
-          <a href="#contact" class="btn-primary" data-i18n="hero.btn1">Request my CV</a>
-          <a href="#contact" class="btn-secondary" data-i18n="hero.btn2">Get in touch to learn more</a>
+          <a href="#contact" class="btn-primary" data-i18n="hero.btn1">Contact me</a>
         </div>
         <div class="hero-meta">
           <span data-i18n="hero.meta1">15+ years experience</span>
@@ -1034,24 +1034,24 @@
           <h2 class="section-heading" data-i18n="strengths.heading">Where I<br>add value.</h2>
         </div>
         <div class="strengths-intro reveal" data-delay="100" data-i18n="strengths.intro">
-          My strengths are not a list of buzzwords — they are the result of years spent solving real infrastructure problems in demanding environments. Each reflects a pattern of thinking and delivery that I bring consistently.
+          My strengths are shaped by real-world challenges in complex environments. They reflect a pragmatic mindset, consistent delivery, and full ownership.
         </div>
       </div>
       <div class="strengths-grid">
         <div class="strength-card reveal">
           <div class="strength-num">01</div>
           <div class="strength-title" data-i18n="strengths.s1.title">Reliability</div>
-          <div class="strength-desc" data-i18n="strengths.s1.desc">I have a disciplined approach to uptime. Critical financial services run on the systems I manage, which means failures are not abstract — they have consequences. I prioritise preventive operations, structured change management, and robust documentation to keep environments stable.</div>
+          <div class="strength-desc" data-i18n="strengths.s1.desc">I have a disciplined approach to uptime. Critical financial services run on the systems I manage, which means reliability is non-negotiable. I prioritise preventive operations, structured change management, and robust documentation to keep environments stable and predictable.</div>
         </div>
         <div class="strength-card reveal" data-delay="80">
           <div class="strength-num">02</div>
           <div class="strength-title" data-i18n="strengths.s2.title">Security</div>
-          <div class="strength-desc" data-i18n="strengths.s2.desc">Security is embedded into how I operate, not added later. I have led ISO 27001-aligned initiatives, managed PKI deployments, coordinated vulnerability remediation after penetration tests, and enforced firewall governance — always within regulatory frameworks.</div>
+          <div class="strength-desc" data-i18n="strengths.s2.desc">Security is embedded into how I operate, not added later. I design and enforce identity and access controls, including Conditional Access and SSO. I work within ISO 27001-aligned environments, coordinating vulnerability remediation and enforcing firewall governance.</div>
         </div>
         <div class="strength-card reveal" data-delay="160">
           <div class="strength-num">03</div>
           <div class="strength-title" data-i18n="strengths.s3.title">Automation</div>
-          <div class="strength-desc" data-i18n="strengths.s3.desc">I automate what should be automated. Using PowerShell, I have reduced manual overhead in AD management, security reporting, and audit preparation — building solutions that are readable, documented, and maintainable by others.</div>
+          <div class="strength-desc" data-i18n="strengths.s3.desc">Automation is a core part of how I operate. It reduces manual effort, increases reliability, and ensures repeatable processes. I build PowerShell solutions for AD management, security reporting, and audit preparation that others can understand, use, and maintain.</div>
         </div>
         <div class="strength-card reveal" data-delay="0">
           <div class="strength-num">04</div>
@@ -1072,86 +1072,6 @@
     </div>
   </section>
 
-  <!-- EXPERTISE -->
-  <section id="expertise">
-    <div class="container">
-      <div class="reveal">
-        <div class="section-eyebrow" data-i18n="expertise.eyebrow">Technical Expertise</div>
-        <h2 class="section-heading" data-i18n="expertise.heading">Architecture &amp; stack.</h2>
-      </div>
-      <div class="expertise-grid">
-
-        <div class="reveal" data-delay="0">
-          <div class="expertise-group-label" data-i18n="expertise.g1">Infrastructure &amp; Platforms</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">Hybrid Infrastructure Design</span>
-            <span class="tech-tag">Windows Server (2008–2022)</span>
-            <span class="tech-tag">VMware vSphere / ESXi</span>
-            <span class="tech-tag">Microsoft Hyper-V</span>
-            <span class="tech-tag">NetApp SAN / NAS Storage</span>
-            <span class="tech-tag">Veeam Backup &amp; Replication</span>
-          </div>
-        </div>
-
-        <div class="reveal" data-delay="80">
-          <div class="expertise-group-label" data-i18n="expertise.g2">Cloud &amp; Modern Workplace</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">Microsoft Azure (IaaS / PaaS)</span>
-            <span class="tech-tag">Azure AD &amp; Conditional Access</span>
-            <span class="tech-tag">Microsoft 365 (Exchange Online, Intune, Teams)</span>
-            <span class="tech-tag">Entra ID &amp; Hybrid Identity</span>
-            <span class="tech-tag">Cross-Forest Migrations</span>
-          </div>
-        </div>
-
-        <div class="reveal" data-delay="0">
-          <div class="expertise-group-label" data-i18n="expertise.g3">Security &amp; Compliance</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">Security Governance (ISO 27001, GDPR, ITIL)</span>
-            <span class="tech-tag">PKI &amp; Certificate Lifecycle</span>
-            <span class="tech-tag">Vulnerability Management</span>
-            <span class="tech-tag">Firewall &amp; Perimeter (Checkpoint, Fortinet)</span>
-            <span class="tech-tag">MFA / Smartcard / Zero Trust</span>
-            <span class="tech-tag">Audit &amp; Compliance Support</span>
-          </div>
-        </div>
-
-        <div class="reveal" data-delay="80">
-          <div class="expertise-group-label" data-i18n="expertise.g4">Identity &amp; Access Management</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">Active Directory &amp; Identity Services</span>
-            <span class="tech-tag">SSO &amp; Federation</span>
-            <span class="tech-tag">Citrix XenApp / VDI &amp; NetScaler</span>
-            <span class="tech-tag">MDM &amp; Endpoint Management</span>
-            <span class="tech-tag">Privileged Access Controls</span>
-          </div>
-        </div>
-
-        <div class="reveal" data-delay="0">
-          <div class="expertise-group-label" data-i18n="expertise.g5">Resilience &amp; Operations</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">Disaster Recovery Strategy (RPO / RTO)</span>
-            <span class="tech-tag">Business Continuity Planning</span>
-            <span class="tech-tag">Infrastructure Monitoring (PRTG)</span>
-            <span class="tech-tag">SCCM / Endpoint Deployment</span>
-            <span class="tech-tag">Incident &amp; Change Management</span>
-          </div>
-        </div>
-
-        <div class="reveal" data-delay="80">
-          <div class="expertise-group-label" data-i18n="expertise.g6">Automation &amp; Networking</div>
-          <div class="expertise-tags">
-            <span class="tech-tag">PowerShell Scripting &amp; Automation</span>
-            <span class="tech-tag">Network Segmentation &amp; VLANs</span>
-            <span class="tech-tag">VPN &amp; Remote Access</span>
-            <span class="tech-tag">Cisco Networking</span>
-            <span class="tech-tag">Infrastructure-as-Code (Terraform basics)</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- IMPACT -->
   <section id="impact">
@@ -1160,7 +1080,7 @@
         <div class="section-eyebrow" data-i18n="impact.eyebrow">Professional Impact</div>
         <h2 class="section-heading" data-i18n="impact.heading">What I have delivered.</h2>
         <p class="impact-intro" data-i18n="impact.intro">
-          Across regulated financial environments and complex international deployments, here is the kind of work I have driven — not titles or job descriptions, but outcomes.
+          A selection of work delivered across regulated financial environments and complex international deployments, focused on real outcomes.
         </p>
       </div>
       <div class="impact-list">
@@ -1208,7 +1128,7 @@
       <div class="process-grid">
         <div class="process-left reveal" data-delay="0">
           <p class="process-quote" data-i18n="process.quote">
-            "Good infrastructure is invisible when it works, and explainable when it does not."
+            "Good infrastructure is invisible in operation, and continuously improved by design."
           </p>
           <div class="process-quote-attr" data-i18n="process.quoteAttr">— A principle I work by</div>
         </div>
@@ -1253,6 +1173,89 @@
     </div>
   </section>
 
+  <!-- EXPERTISE -->
+  <section id="expertise">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow" data-i18n="expertise.eyebrow">Technical Expertise</div>
+        <h2 class="section-heading" data-i18n="expertise.heading">Architecture &amp; Platform Expertise.</h2>
+      </div>
+      <div class="expertise-grid">
+
+        <div class="reveal" data-delay="0">
+          <div class="expertise-group-label" data-i18n="expertise.g1">Infrastructure &amp; Platforms</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Hybrid Infrastructure Design</span>
+            <span class="tech-tag">Windows Server (2008–2022)</span>
+            <span class="tech-tag">VMware vSphere / ESXi</span>
+            <span class="tech-tag">Microsoft Hyper-V</span>
+            <span class="tech-tag">NetApp SAN / NAS Storage</span>
+            <span class="tech-tag">Veeam Backup &amp; Replication</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label" data-i18n="expertise.g2">Cloud &amp; Modern Workplace</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Microsoft Azure (IaaS / PaaS)</span>
+            <span class="tech-tag">Azure AD &amp; Conditional Access</span>
+            <span class="tech-tag">Microsoft 365 (Exchange Online, Intune, Teams)</span>
+            <span class="tech-tag">Entra ID &amp; Hybrid Identity</span>
+            <span class="tech-tag">Cross-Forest Migrations</span>
+            <span class="tech-tag">Identity Lifecycle Management</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="0">
+          <div class="expertise-group-label" data-i18n="expertise.g3">Security &amp; Compliance</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Security Governance (ISO 27001, GDPR, ITIL)</span>
+            <span class="tech-tag">PKI &amp; Certificate Lifecycle</span>
+            <span class="tech-tag">Vulnerability Management</span>
+            <span class="tech-tag">Firewall &amp; Perimeter (Checkpoint, Fortinet)</span>
+            <span class="tech-tag">MFA / Smartcard / Zero Trust</span>
+            <span class="tech-tag">Audit &amp; Compliance Support</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label" data-i18n="expertise.g4">Identity &amp; Access Management</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Active Directory &amp; Identity Services</span>
+            <span class="tech-tag">SSO &amp; Federation</span>
+            <span class="tech-tag">Citrix XenApp / VDI &amp; NetScaler</span>
+            <span class="tech-tag">MDM &amp; Endpoint Management</span>
+            <span class="tech-tag">Privileged Access Controls</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="0">
+          <div class="expertise-group-label" data-i18n="expertise.g5">Resilience &amp; Operations</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">Disaster Recovery Strategy (RPO / RTO)</span>
+            <span class="tech-tag">Business Continuity Planning</span>
+            <span class="tech-tag">Infrastructure Monitoring (PRTG)</span>
+            <span class="tech-tag">SCCM / Endpoint Deployment</span>
+            <span class="tech-tag">Incident &amp; Change Management</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="80">
+          <div class="expertise-group-label" data-i18n="expertise.g6">Automation &amp; Networking</div>
+          <div class="expertise-tags">
+            <span class="tech-tag">PowerShell Scripting &amp; Automation</span>
+            <span class="tech-tag">Network Segmentation &amp; VLANs</span>
+            <span class="tech-tag">VPN &amp; Remote Access</span>
+            <span class="tech-tag">Cisco Networking</span>
+            <span class="tech-tag">Infrastructure-as-Code (Terraform basics)</span>
+            <span class="tech-tag">Deployment &amp; Provisioning</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -1261,7 +1264,7 @@
           <div class="section-eyebrow" data-i18n="contact.eyebrow">Contact</div>
           <div class="contact-cta-heading" data-i18n="contact.heading">Let's have a<br><em>real conversation.</em></div>
           <p class="contact-text" style="margin-top:1.5rem" data-i18n="contact.text">
-            I enjoy sharing my experience in finance and cloud infrastructure. Whether you want to discuss tech stacks or best practices in documentation, my inbox is always open for a real conversation.
+            I value meaningful conversations about infrastructure, security, and how things actually work in practice. If you'd like to exchange ideas, feel free to reach out.
           </p>
           <p class="contact-cv-note" data-i18n="contact.cvNote">Detailed CV available upon request.</p>
         </div>
@@ -1306,10 +1309,10 @@
     en: {
       nav: { about:'About', strengths:'Strengths', expertise:'Expertise', impact:'Impact', process:'Approach', contact:'Contact' },
       hero: {
-        personal: 'Dedicated husband | Proud father | Resilient engineer',
+        personal: 'Happy husband | Proud father | Resilient engineer',
         headline: 'Building resilient infrastructure where reliability, security, and automation play a critical role.',
         sub: 'Designing resilient infrastructure for regulated environments. I operate and secure mission-critical hybrid platforms across on-premises and cloud, ensuring stability, compliance, and long-term performance.',
-        btn1: 'Request my CV', btn2: 'Get in touch to learn more',
+        btn1: 'Contact me',
         meta1: '15+ years experience', meta2: 'Regulated financial environments', meta3: 'Hybrid infrastructure'
       },
       about: {
@@ -1321,22 +1324,22 @@
       },
       strengths: {
         eyebrow: 'Core Strengths', heading: 'Where I<br>add value.',
-        intro: 'My strengths are not a list of buzzwords — they are the result of years spent solving real infrastructure problems in demanding environments. Each reflects a pattern of thinking and delivery that I bring consistently.',
-        s1: { title: 'Reliability', desc: 'I have a disciplined approach to uptime. Critical financial services run on the systems I manage, which means failures are not abstract — they have consequences. I prioritise preventive operations, structured change management, and robust documentation to keep environments stable.' },
-        s2: { title: 'Security', desc: 'Security is embedded into how I operate, not added later. I have led ISO 27001-aligned initiatives, managed PKI deployments, coordinated vulnerability remediation after penetration tests, and enforced firewall governance — always within regulatory frameworks.' },
-        s3: { title: 'Automation', desc: 'I automate what should be automated. Using PowerShell, I have reduced manual overhead in AD management, security reporting, and audit preparation — building solutions that are readable, documented, and maintainable by others.' },
+        intro: 'My strengths are shaped by real-world challenges in complex environments. They reflect a pragmatic mindset, consistent delivery, and full ownership.',
+        s1: { title: 'Reliability', desc: 'I have a disciplined approach to uptime. Critical financial services run on the systems I manage, which means reliability is non-negotiable. I prioritise preventive operations, structured change management, and robust documentation to keep environments stable and predictable.' },
+        s2: { title: 'Security', desc: 'Security is embedded into how I operate, not added later. I design and enforce identity and access controls, including Conditional Access and SSO. I work within ISO 27001-aligned environments, coordinating vulnerability remediation and enforcing firewall governance.' },
+        s3: { title: 'Automation', desc: 'Automation is a core part of how I operate. It reduces manual effort, increases reliability, and ensures repeatable processes. I build PowerShell solutions for AD management, security reporting, and audit preparation that others can understand, use, and maintain.' },
         s4: { title: 'Hybrid Infrastructure', desc: 'I am equally comfortable on-premises and in the cloud. I have administered Windows Server, VMware, Active Directory, Azure, and Microsoft 365 as interconnected systems — designing and maintaining environments that span both worlds effectively.' },
         s5: { title: 'Operational Ownership', desc: 'I treat infrastructure as mine to own, not just maintain. From audits to data center relocations, I take responsibility for outcomes. That includes proactive monitoring, honest incident reporting, and always knowing the state of what I manage.' },
         s6: { title: 'Problem Solving', desc: 'Infrastructure problems often arrive without a clear manual. I work methodically, stay calm under pressure, and know when to escalate. My escalation track record includes direct collaboration with Microsoft engineers on complex Exchange migrations.' }
       },
       expertise: {
-        eyebrow: 'Technical Expertise', heading: 'Architecture &amp; stack.',
+        eyebrow: 'Technical Expertise', heading: 'Architecture &amp; Platform Expertise.',
         g1: 'Infrastructure &amp; Platforms', g2: 'Cloud &amp; Modern Workplace', g3: 'Security &amp; Compliance',
         g4: 'Identity &amp; Access Management', g5: 'Resilience &amp; Operations', g6: 'Automation &amp; Networking'
       },
       impact: {
         eyebrow: 'Professional Impact', heading: 'What I have delivered.',
-        intro: 'Across regulated financial environments and complex international deployments, here is the kind of work I have driven — not titles or job descriptions, but outcomes.',
+        intro: 'A selection of work delivered across regulated financial environments and complex international deployments, focused on real outcomes.',
         i1: { title: 'Hybrid Infrastructure Ownership', desc: 'End-to-end administration and continuous optimization of hybrid ecosystems combining Windows Server, VMware, Azure, and Microsoft 365 — ensuring 99.9% availability for financial services.' },
         i2: { title: 'Cross-Forest & Platform Migrations', desc: 'Orchestrated multi-forest domain migrations and Exchange Online transitions for 1,000+ users following corporate acquisitions — maintaining business continuity throughout.' },
         i3: { title: 'Security Hardening & Compliance', desc: 'Led vulnerability remediation programs following penetration tests, PKI deployments, network segmentation aligned with ISO 27001, and firewall governance under international financial regulations.' },
@@ -1346,7 +1349,7 @@
       },
       process: {
         eyebrow: 'How I Work', heading: 'My working<br>approach.',
-        quote: '"Good infrastructure is invisible when it works, and explainable when it does not."',
+        quote: '"Good infrastructure is invisible in operation, and continuously improved by design."',
         quoteAttr: '— A principle I work by',
         p1: { title: 'Full Ownership, No Hand-Waving', desc: 'I take responsibility for the systems I manage. That means staying informed about their state, being accountable for outcomes, and not delegating problems upward unnecessarily. If I own it, I know it.' },
         p2: { title: 'Calm Under Pressure', desc: 'Incidents in financial environments have real consequences. I approach them methodically — isolating the problem, communicating clearly, and focusing on resolution rather than noise. I do not panic; I diagnose.' },
@@ -1356,7 +1359,7 @@
       },
       contact: {
         eyebrow: 'Contact', heading: "Let's have a<br><em>real conversation.</em>",
-        text: 'I enjoy sharing my experience in finance and cloud infrastructure. Whether you want to discuss tech stacks or best practices in documentation, my inbox is always open for a real conversation.',
+        text: "I value meaningful conversations about infrastructure, security, and how things actually work in practice. If you'd like to exchange ideas, feel free to reach out.",
         cvNote: 'Detailed CV available upon request.', emailLabel: 'Email', cvLabel: 'Request CV', cvValue: 'Send a CV request by email'
       },
       footer: { role: 'ICT Infrastructure Engineer, Zurich', copy: '© 2026 · All rights reserved' }
@@ -1365,10 +1368,10 @@
     de: {
       nav: { about:'Über mich', strengths:'Stärken', expertise:'Expertise', impact:'Leistungen', process:'Arbeitsweise', contact:'Kontakt' },
       hero: {
-        personal: 'Liebevoller Ehemann | Stolzer Vater | Resilienter Ingenieur',
+        personal: 'Glücklicher Ehemann | Stolzer Vater | Resilienter Ingenieur',
         headline: 'Aufbau resilienter Infrastrukturen, in denen Zuverlässigkeit, Sicherheit und Automation eine zentrale Rolle spielen.',
         sub: 'Ich entwickle und betreibe mission-critical hybrid Plattformen in regulierten Umgebungen — on-premises und in der Cloud — mit Fokus auf Stabilität, Compliance und langfristige Zuverlässigkeit.',
-        btn1: 'CV anfordern', btn2: 'Mehr erfahren',
+        btn1: 'Kontakt aufnehmen',
         meta1: '15+ Jahre Erfahrung', meta2: 'Regulierte Finanzumgebungen', meta3: 'Hybrid Infrastructure'
       },
       about: {
@@ -1380,22 +1383,22 @@
       },
       strengths: {
         eyebrow: 'Kernkompetenzen', heading: 'Wo ich<br>Mehrwert schaffe.',
-        intro: 'Meine Stärken sind keine Buzzword-Liste — sie sind das Ergebnis jahrelanger Arbeit an realen Infrastrukturproblemen in anspruchsvollen Umgebungen. Jede spiegelt eine Denk- und Arbeitsweise wider, die ich konsequent einbringe.',
-        s1: { title: 'Zuverlässigkeit', desc: 'Ich verfolge einen disziplinierten Ansatz in Bezug auf Verfügbarkeit. Kritische Finanzdienstleistungen laufen auf den Systemen, die ich betreue — Ausfälle sind nicht abstrakt, sie haben Konsequenzen. Ich priorisiere präventive Maßnahmen, strukturiertes Change Management und robuste Dokumentation.' },
-        s2: { title: 'Security', desc: 'Security ist bei mir von Anfang an eingebettet, nicht nachträglich hinzugefügt. Ich habe ISO 27001-konforme Initiativen geleitet, PKI Deployments verwaltet, Vulnerability Remediation nach Penetrationstests koordiniert und Firewall Governance durchgesetzt — stets im regulatorischen Rahmen.' },
-        s3: { title: 'Automation', desc: 'Ich automatisiere, was automatisiert werden sollte. Mit PowerShell habe ich manuellen Aufwand in der AD-Verwaltung, im Security Reporting und in der Audit-Vorbereitung reduziert — und dabei lesbare, dokumentierte und wartbare Lösungen erstellt.' },
+        intro: 'Meine Stärken sind durch reale Herausforderungen in komplexen Umgebungen geprägt. Sie spiegeln eine pragmatische Denkweise, konsequente Umsetzung und volle Verantwortung wider.',
+        s1: { title: 'Zuverlässigkeit', desc: 'Ich verfolge einen disziplinierten Ansatz in Bezug auf Verfügbarkeit. Kritische Finanzdienstleistungen laufen auf den Systemen, die ich betreue — das bedeutet, Zuverlässigkeit ist nicht verhandelbar. Ich priorisiere präventive Massnahmen, strukturiertes Change Management und robuste Dokumentation, um Umgebungen stabil und vorhersehbar zu halten.' },
+        s2: { title: 'Security', desc: 'Security ist bei mir von Anfang an eingebettet, nicht nachträglich hinzugefügt. Ich designe und durchsetze Identity- und Access-Controls, einschliesslich Conditional Access und SSO. Ich arbeite in ISO 27001-konformen Umgebungen, koordiniere Vulnerability Remediation und setze Firewall Governance durch.' },
+        s3: { title: 'Automation', desc: 'Automation ist ein zentraler Bestandteil meiner Arbeitsweise. Sie reduziert manuellen Aufwand, erhöht die Zuverlässigkeit und sorgt für wiederholbare Prozesse. Ich entwickle PowerShell-Lösungen für AD-Management, Security Reporting und Audit-Vorbereitung, die andere verstehen, nutzen und pflegen können.' },
         s4: { title: 'Hybrid Infrastructure', desc: 'Ich bin on-premises wie in der Cloud gleichermassen zu Hause. Ich habe Windows Server, VMware, Active Directory, Azure und Microsoft 365 als verbundene Systeme administriert — und Umgebungen entworfen, die beide Welten effektiv verbinden.' },
         s5: { title: 'Operative Verantwortung', desc: 'Ich behandle Infrastruktur als meine eigene — nicht nur als etwas, das ich betreue. Von Audits bis zu Data-Center-Umzügen übernehme ich Verantwortung für Ergebnisse. Das bedeutet proaktives Monitoring, ehrliches Incident Reporting und stets den Überblick über den Zustand der Systeme.' },
         s6: { title: 'Problemlösung', desc: 'Infrastrukturprobleme kommen oft ohne klares Handbuch. Ich arbeite methodisch, bleibe unter Druck ruhig und weiss, wann ich eskalieren muss. Meine Eskalationserfahrung umfasst die direkte Zusammenarbeit mit Microsoft-Ingenieuren bei komplexen Exchange-Migrationen.' }
       },
       expertise: {
-        eyebrow: 'Technische Expertise', heading: 'Architektur &amp; Stack.',
+        eyebrow: 'Technische Expertise', heading: 'Architektur &amp; Platform Expertise.',
         g1: 'Infrastructure &amp; Platforms', g2: 'Cloud &amp; Modern Workplace', g3: 'Security &amp; Compliance',
         g4: 'Identity &amp; Access Management', g5: 'Resilience &amp; Operations', g6: 'Automation &amp; Networking'
       },
       impact: {
         eyebrow: 'Berufliche Leistungen', heading: 'Was ich erreicht habe.',
-        intro: 'In regulierten Finanzumgebungen und komplexen internationalen Projekten — hier die Art von Arbeit, die ich vorangetrieben habe. Keine Titel, keine Jobbeschreibungen, sondern Ergebnisse.',
+        intro: 'Eine Auswahl an Projekten aus regulierten Finanzumgebungen und komplexen internationalen Deployments — mit Fokus auf reale Ergebnisse.',
         i1: { title: 'Hybrid Infrastructure Ownership', desc: 'End-to-end Administration und kontinuierliche Optimierung von hybrid Ökosystemen mit Windows Server, VMware, Azure und Microsoft 365 — mit 99.9% Verfügbarkeit für Finanzdienstleistungen.' },
         i2: { title: 'Cross-Forest & Plattform-Migrationen', desc: 'Orchestrierung von Multi-Forest Domain Migrationen und Exchange Online Übergängen für über 1.000 Nutzer nach Unternehmensübernahmen — mit durchgehender Business Continuity.' },
         i3: { title: 'Security Hardening & Compliance', desc: 'Leitung von Vulnerability-Remediation-Programmen nach Penetrationstests, PKI Deployments, Netzwerksegmentierung nach ISO 27001 und Firewall Governance unter internationalen Finanzvorschriften.' },
@@ -1405,7 +1408,7 @@
       },
       process: {
         eyebrow: 'Meine Arbeitsweise', heading: 'Ansatz &amp;<br>Methode.',
-        quote: '„Gute Infrastruktur ist unsichtbar, wenn sie funktioniert — und erklärbar, wenn nicht."',
+        quote: '„Gute Infrastruktur ist im Betrieb unsichtbar und wird durch Design kontinuierlich verbessert."',
         quoteAttr: '— Ein Grundsatz, nach dem ich arbeite',
         p1: { title: 'Volle Verantwortung, kein Herumreden', desc: 'Ich übernehme Verantwortung für die Systeme, die ich betreue. Das bedeutet, ihren Zustand zu kennen, für Ergebnisse gerade zu stehen und Probleme nicht unnötig nach oben zu delegieren. Was mir gehört, kenne ich.' },
         p2: { title: 'Ruhe unter Druck', desc: 'Incidents in Finanzumgebungen haben reale Konsequenzen. Ich gehe methodisch vor — isoliere das Problem, kommuniziere klar und fokussiere auf die Lösung statt auf den Lärm. Ich panikiere nicht; ich diagnostiziere.' },
@@ -1415,7 +1418,7 @@
       },
       contact: {
         eyebrow: 'Kontakt', heading: 'Lassen Sie uns ein<br><em>echtes Gespräch führen.</em>',
-        text: 'Ich teile meine Erfahrung im Finanz- und Cloud Infrastructure Bereich gerne. Ob Sie über Tech Stacks oder Best Practices in der Dokumentation sprechen möchten — mein Posteingang ist immer für ein echtes Gespräch offen.',
+        text: 'Ich schätze bedeutungsvolle Gespräche über Infrastruktur, Security und wie Dinge in der Praxis wirklich funktionieren. Wenn Sie Ideen austauschen möchten, melden Sie sich gerne.',
         cvNote: 'Detaillierter Lebenslauf auf Anfrage verfügbar.', emailLabel: 'E-Mail', cvLabel: 'CV anfordern', cvValue: 'CV-Anfrage per E-Mail senden'
       },
       footer: { role: 'ICT Infrastructure Engineer, Zürich', copy: '© 2026 · Alle Rechte vorbehalten' }
@@ -1424,10 +1427,10 @@
     it: {
       nav: { about:'Chi sono', strengths:'Punti di forza', expertise:'Competenze', impact:'Risultati', process:'Approccio', contact:'Contatti' },
       hero: {
-        personal: 'Marito devoto | Padre orgoglioso | Ingegnere resiliente',
+        personal: 'Marito felice | Padre orgoglioso | Ingegnere resiliente',
         headline: 'Costruire infrastrutture resilienti dove affidabilità, security e automation svolgono un ruolo critico.',
         sub: 'Progetto e gestisco hybrid platform mission-critical in ambienti regolamentati — on-premises e cloud — con focus su stabilità, compliance e performance a lungo termine.',
-        btn1: 'Richiedi il mio CV', btn2: 'Contattami per saperne di più',
+        btn1: 'Contattami',
         meta1: '15+ anni di esperienza', meta2: 'Ambienti finanziari regolamentati', meta3: 'Hybrid infrastructure'
       },
       about: {
@@ -1439,22 +1442,22 @@
       },
       strengths: {
         eyebrow: 'Punti di forza', heading: 'Dove genero<br>valore.',
-        intro: 'I miei punti di forza non sono una lista di buzzword — sono il risultato di anni trascorsi a risolvere problemi infrastrutturali reali in ambienti esigenti. Ognuno riflette uno schema di pensiero e di consegna che porto in modo costante.',
-        s1: { title: 'Affidabilità', desc: 'Ho un approccio disciplinato all\'uptime. Servizi finanziari critici girano sui sistemi che gestisco, il che significa che i guasti non sono astratti — hanno conseguenze. Prioritizzo operazioni preventive, change management strutturato e documentazione solida per mantenere gli ambienti stabili.' },
-        s2: { title: 'Security', desc: 'La security è integrata nel mio modo di operare, non aggiunta a posteriori. Ho guidato iniziative allineate a ISO 27001, gestito deployment PKI, coordinato la remediation delle vulnerabilità dopo penetration test e applicato la firewall governance — sempre nel rispetto dei framework normativi.' },
-        s3: { title: 'Automation', desc: 'Automatizzo ciò che va automatizzato. Usando PowerShell, ho ridotto il lavoro manuale nella gestione di AD, nel security reporting e nella preparazione agli audit — costruendo soluzioni leggibili, documentate e manutenibili da altri.' },
+        intro: 'I miei punti di forza sono plasmati da sfide reali in ambienti complessi. Riflettono una mentalità pragmatica, una consegna costante e piena ownership.',
+        s1: { title: 'Affidabilità', desc: 'Ho un approccio disciplinato all\'uptime. Servizi finanziari critici girano sui sistemi che gestisco, il che significa che l\'affidabilità non è negoziabile. Prioritizzo operazioni preventive, change management strutturato e documentazione solida per mantenere gli ambienti stabili e prevedibili.' },
+        s2: { title: 'Security', desc: 'La security è integrata nel mio modo di operare, non aggiunta a posteriori. Progetto e applico controlli di identity e access, inclusi Conditional Access e SSO. Lavoro in ambienti allineati a ISO 27001, coordinando la vulnerability remediation e applicando la firewall governance.' },
+        s3: { title: 'Automation', desc: "L'automation è una parte centrale del mio modo di operare. Riduce lo sforzo manuale, aumenta l'affidabilità e garantisce processi ripetibili. Sviluppo soluzioni PowerShell per la gestione di AD, il security reporting e la preparazione agli audit che altri possono capire, usare e mantenere." },
         s4: { title: 'Hybrid Infrastructure', desc: 'Sono ugualmente a mio agio on-premises e in cloud. Ho amministrato Windows Server, VMware, Active Directory, Azure e Microsoft 365 come sistemi interconnessi — progettando e mantenendo ambienti che coprono efficacemente entrambi i mondi.' },
         s5: { title: 'Ownership Operativa', desc: 'Tratto l\'infrastruttura come mia, non solo come qualcosa che mantengo. Dagli audit ai trasferimenti di data center, mi assumo la responsabilità dei risultati. Questo include monitoring proattivo, incident reporting onesto e la conoscenza costante dello stato di ciò che gestisco.' },
         s6: { title: 'Problem Solving', desc: 'I problemi infrastrutturali spesso arrivano senza un manuale chiaro. Lavoro in modo metodico, mantengo la calma sotto pressione e so quando escalare. Il mio track record di escalation include collaborazione diretta con ingegneri Microsoft su migrazioni Exchange complesse.' }
       },
       expertise: {
-        eyebrow: 'Competenze tecniche', heading: 'Architettura &amp; stack.',
+        eyebrow: 'Competenze tecniche', heading: 'Architettura &amp; Platform Expertise.',
         g1: 'Infrastructure &amp; Platforms', g2: 'Cloud &amp; Modern Workplace', g3: 'Security &amp; Compliance',
         g4: 'Identity &amp; Access Management', g5: 'Resilience &amp; Operations', g6: 'Automation &amp; Networking'
       },
       impact: {
         eyebrow: 'Impatto professionale', heading: 'Cosa ho consegnato.',
-        intro: 'In ambienti finanziari regolamentati e deployment internazionali complessi — ecco il tipo di lavoro che ho condotto. Non titoli o job description, ma risultati concreti.',
+        intro: 'Una selezione di progetti realizzati in ambienti finanziari regolamentati e deployment internazionali complessi, con focus su risultati concreti.',
         i1: { title: 'Hybrid Infrastructure Ownership', desc: 'Amministrazione end-to-end e ottimizzazione continua di ecosistemi hybrid che combinano Windows Server, VMware, Azure e Microsoft 365 — garantendo disponibilità del 99.9% per i servizi finanziari.' },
         i2: { title: 'Migrazioni Cross-Forest & di Piattaforma', desc: 'Orchestrazione di migrazioni domain multi-forest e transizioni Exchange Online per oltre 1.000 utenti a seguito di acquisizioni aziendali — mantenendo la business continuity per tutta la durata.' },
         i3: { title: 'Security Hardening & Compliance', desc: 'Gestione di programmi di vulnerability remediation dopo penetration test, deployment PKI, segmentazione di rete allineata a ISO 27001 e firewall governance nel rispetto delle normative finanziarie internazionali.' },
@@ -1464,7 +1467,7 @@
       },
       process: {
         eyebrow: 'Come lavoro', heading: 'Il mio approccio<br>al lavoro.',
-        quote: '"Una buona infrastruttura è invisibile quando funziona, e spiegabile quando non funziona."',
+        quote: '"Una buona infrastruttura è invisibile in operazione, e continuamente migliorata per design."',
         quoteAttr: '— Un principio che guida il mio lavoro',
         p1: { title: 'Piena Responsabilità, Nessuna Scusa', desc: 'Mi assumo la responsabilità dei sistemi che gestisco. Questo significa tenermi aggiornato sul loro stato, essere accountable per i risultati e non delegare i problemi verso l\'alto inutilmente. Se è mio, lo conosco.' },
         p2: { title: 'Calma Sotto Pressione', desc: 'Gli incident negli ambienti finanziari hanno conseguenze reali. Li affronto metodicamente — isolo il problema, comunico chiaramente e mi concentro sulla risoluzione piuttosto che sul rumore. Non mi faccio prendere dal panico; diagnostico.' },
@@ -1474,7 +1477,7 @@
       },
       contact: {
         eyebrow: 'Contatti', heading: 'Iniziamo una<br><em>conversazione vera.</em>',
-        text: 'Mi piace condividere la mia esperienza nel settore finance e nella cloud infrastructure. Che tu voglia discutere di tech stack o best practice nella documentazione, la mia inbox è sempre aperta per una conversazione autentica.',
+        text: 'Apprezzo le conversazioni significative su infrastructure, security e su come le cose funzionano davvero in pratica. Se vuoi scambiare idee, non esitare a contattarmi.',
         cvNote: 'CV dettagliato disponibile su richiesta.', emailLabel: 'Email', cvLabel: 'Richiedi CV', cvValue: 'Invia una richiesta CV via email'
       },
       footer: { role: 'ICT Infrastructure Engineer, Zurigo', copy: '© 2026 · Tutti i diritti riservati' }
