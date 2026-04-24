@@ -935,6 +935,7 @@
       <a href="#impact" data-i18n="nav.impact">Impact</a>
       <a href="#process" data-i18n="nav.process">Approach</a>
       <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+      <a href="#recognition" data-i18n="nav.recognition">Recognition</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
       <div class="lang-switcher">
         <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -954,6 +955,7 @@
     <a href="#impact" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.impact">Impact</a>
     <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.process">Approach</a>
     <a href="#expertise" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.expertise">Expertise</a>
+    <a href="#recognition" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.recognition">Recognition</a>
     <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')" data-i18n="nav.contact">Contact</a>
     <div class="lang-switcher" style="margin-left:0; margin-top:.5rem; padding-top:1rem; border-top:1px solid var(--rule);">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -1278,6 +1280,61 @@
     </div>
   </section>
 
+  <!-- RECOGNITION -->
+  <section id="recognition">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow" data-i18n="recognition.eyebrow">Professional Recognition</div>
+        <h2 class="section-heading" data-i18n="recognition.heading">How I have been<br><em style="font-style:italic;color:var(--gold)">recognized.</em></h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-left reveal" data-delay="0">
+          <p class="process-quote" data-i18n="recognition.quote">
+            "Consistent performance, reliability, and ownership — recognized across regulated and international environments."
+          </p>
+          <div class="process-quote-attr" data-i18n="recognition.quoteAttr">— Across multiple employers</div>
+        </div>
+        <div class="process-items">
+          <div class="process-item reveal">
+            <div class="process-item-num">01</div>
+            <div>
+              <div class="process-item-title" data-i18n="recognition.r1.title">A FINMA-regulated investment firm — Zurich, Switzerland</div>
+              <div class="process-item-desc" data-i18n="recognition.r1.desc">Consistently exceeded expectations while owning and operating the full IT infrastructure. Recognized as a reliable and independent professional, with strong accountability and attention to detail. Performance and conduct were rated as exemplary.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="60">
+            <div class="process-item-num">02</div>
+            <div>
+              <div class="process-item-title" data-i18n="recognition.r2.title">A global asset management firm — Zug, Switzerland</div>
+              <div class="process-item-desc" data-i18n="recognition.r2.desc">Valued member of the engineering team in a demanding, international environment. Delivered high-quality results across infrastructure, security, and operations. Demonstrated strong determination, professionalism, and integrity.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="120">
+            <div class="process-item-num">03</div>
+            <div>
+              <div class="process-item-title" data-i18n="recognition.r3.title">An IT infrastructure and services company — Caslano, Switzerland</div>
+              <div class="process-item-desc" data-i18n="recognition.r3.desc">Demonstrated a proactive and entrepreneurial mindset, with strong personal commitment. Recognized as a role model within the team, combining technical expertise with effective communication. Consistently delivered high-quality outcomes.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="180">
+            <div class="process-item-num">04</div>
+            <div>
+              <div class="process-item-title" data-i18n="recognition.r4.title">An enterprise IT services provider — Caslano, Switzerland</div>
+              <div class="process-item-desc" data-i18n="recognition.r4.desc">Showed dedication, enthusiasm, and a strong sense of responsibility. Maintained high standards of execution and contributed positively to team collaboration. Reliable in dynamic and operational environments.</div>
+            </div>
+          </div>
+          <div class="process-item reveal" data-delay="240">
+            <div class="process-item-num">05</div>
+            <div>
+              <div class="process-item-title" data-i18n="recognition.r5.title">A global fashion company — Caslano, Switzerland</div>
+              <div class="process-item-desc" data-i18n="recognition.r5.desc">Recognized as a motivated and dependable professional. Handled responsibilities with diligence and contributed to team success. Maintained a positive, cooperative, and solution-oriented approach.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -1289,6 +1346,7 @@
             I value meaningful conversations about infrastructure, security, and how things actually work in practice. If you'd like to exchange ideas, feel free to reach out.
           </p>
           <p class="contact-cv-note" data-i18n="contact.cvNote">Detailed CV available upon request.</p>
+          <p class="contact-cv-note" data-i18n="contact.refNote">Detailed References available upon request.</p>
         </div>
         <div class="reveal" data-delay="100">
           <div class="contact-links">
@@ -1313,6 +1371,13 @@
                 <div class="contact-link-value" data-i18n="contact.cvValue">Send a CV request by email</div>
               </div>
             </a>
+            <a href="mailto:msolarich83@gmail.com?subject=References Request — Matteo Solari" class="contact-link" style="border-color:var(--gold);background:var(--gold-dim)">
+              <div class="contact-link-icon" style="background:var(--gold);color:white">→</div>
+              <div>
+                <div class="contact-link-label" data-i18n="contact.refLabel">Request References</div>
+                <div class="contact-link-value" data-i18n="contact.refValue">Send a References request by email</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -1329,7 +1394,7 @@
   // ── TRANSLATIONS ──────────────────────────────────────────────
   const translations = {
     en: {
-      nav: { about:'About', strengths:'Strengths', expertise:'Expertise', impact:'Impact', process:'Approach', contact:'Contact' },
+      nav: { about:'About', strengths:'Strengths', expertise:'Expertise', impact:'Impact', recognition:'Recognition', process:'Approach', contact:'Contact' },
       hero: {
         personal: 'Happy husband | Proud father | Resilient engineer',
         headline: 'Building resilient infrastructure where reliability, security, and automation play a critical role.',
@@ -1382,13 +1447,23 @@
       contact: {
         eyebrow: 'Contact', heading: "Let's have a<br><em>real conversation.</em>",
         text: "I value meaningful conversations about infrastructure, security, and how things actually work in practice. If you'd like to exchange ideas, feel free to reach out.",
-        cvNote: 'Detailed CV available upon request.', emailLabel: 'Email', cvLabel: 'Request CV', cvValue: 'Send a CV request by email'
+        cvNote: 'Detailed CV available upon request.', refNote: 'Detailed References available upon request.', emailLabel: 'Email', cvLabel: 'Request CV', cvValue: 'Send a CV request by email', refLabel: 'Request References', refValue: 'Send a References request by email'
+      },
+      recognition: {
+        eyebrow: 'Professional Recognition', heading: 'How I have been<br><em style="font-style:italic;color:var(--gold)">recognized.</em>',
+        quote: '"Consistent performance, reliability, and ownership — recognized across regulated and international environments."',
+        quoteAttr: '— Across multiple employers',
+        r1: { title: 'A FINMA-regulated investment firm — Zurich, Switzerland', desc: 'Consistently exceeded expectations while owning and operating the full IT infrastructure. Recognized as a reliable and independent professional, with strong accountability and attention to detail. Performance and conduct were rated as exemplary.' },
+        r2: { title: 'A global asset management firm — Zug, Switzerland', desc: 'Valued member of the engineering team in a demanding, international environment. Delivered high-quality results across infrastructure, security, and operations. Demonstrated strong determination, professionalism, and integrity.' },
+        r3: { title: 'An IT infrastructure and services company — Caslano, Switzerland', desc: 'Demonstrated a proactive and entrepreneurial mindset, with strong personal commitment. Recognized as a role model within the team, combining technical expertise with effective communication. Consistently delivered high-quality outcomes.' },
+        r4: { title: 'An enterprise IT services provider — Caslano, Switzerland', desc: 'Showed dedication, enthusiasm, and a strong sense of responsibility. Maintained high standards of execution and contributed positively to team collaboration. Reliable in dynamic and operational environments.' },
+        r5: { title: 'A global fashion company — Caslano, Switzerland', desc: 'Recognized as a motivated and dependable professional. Handled responsibilities with diligence and contributed to team success. Maintained a positive, cooperative, and solution-oriented approach.' }
       },
       footer: { role: 'ICT Infrastructure Engineer, Zurich', copy: '© 2026 · All rights reserved' }
     },
 
     de: {
-      nav: { about:'Über mich', strengths:'Stärken', expertise:'Expertise', impact:'Leistungen', process:'Arbeitsweise', contact:'Kontakt' },
+      nav: { about:'Über mich', strengths:'Stärken', expertise:'Expertise', impact:'Leistungen', recognition:'Referenzen', process:'Arbeitsweise', contact:'Kontakt' },
       hero: {
         personal: 'Glücklicher Ehemann | Stolzer Vater | Resilienter Ingenieur',
         headline: 'Aufbau resilienter Infrastrukturen, in denen Zuverlässigkeit, Sicherheit und Automation eine zentrale Rolle spielen.',
@@ -1441,13 +1516,23 @@
       contact: {
         eyebrow: 'Kontakt', heading: 'Lassen Sie uns ein<br><em>echtes Gespräch führen.</em>',
         text: 'Ich schätze bedeutungsvolle Gespräche über Infrastruktur, Security und wie Dinge in der Praxis wirklich funktionieren. Wenn Sie Ideen austauschen möchten, melden Sie sich gerne.',
-        cvNote: 'Detaillierter Lebenslauf auf Anfrage verfügbar.', emailLabel: 'E-Mail', cvLabel: 'CV anfordern', cvValue: 'CV-Anfrage per E-Mail senden'
+        cvNote: 'Detaillierter Lebenslauf auf Anfrage verfügbar.', refNote: 'Detaillierte Referenzen auf Anfrage verfügbar.', emailLabel: 'E-Mail', cvLabel: 'CV anfordern', cvValue: 'CV-Anfrage per E-Mail senden', refLabel: 'Referenzen anfordern', refValue: 'Referenzanfrage per E-Mail senden'
+      },
+      recognition: {
+        eyebrow: 'Berufliche Anerkennung', heading: 'Wie ich anerkannt<br><em style="font-style:italic;color:var(--gold)">wurde.</em>',
+        quote: '„Konstante Leistung, Zuverlässigkeit und Ownership — anerkannt in regulierten und internationalen Umgebungen."',
+        quoteAttr: '— Bei mehreren Arbeitgebern',
+        r1: { title: 'Ein FINMA-reguliertes Investmentunternehmen — Zürich, Schweiz', desc: 'Hat Erwartungen konstant übertroffen und die vollständige IT-Infrastruktur eigenverantwortlich betrieben. Als zuverlässiger und unabhängiger Fachmann anerkannt, mit starker Verantwortungsbewusstsein und Sorgfalt. Leistung und Verhalten wurden als vorbildlich bewertet.' },
+        r2: { title: 'Ein globales Asset-Management-Unternehmen — Zug, Schweiz', desc: 'Geschätztes Mitglied des Engineering-Teams in einem anspruchsvollen, internationalen Umfeld. Hochwertige Ergebnisse in Infrastructure, Security und Operations geliefert. Starke Entschlossenheit, Professionalität und Integrität bewiesen.' },
+        r3: { title: 'Ein IT-Infrastruktur- und Dienstleistungsunternehmen — Caslano, Schweiz', desc: 'Proaktive und unternehmerische Denkweise mit starkem persönlichem Engagement bewiesen. Als Vorbild im Team anerkannt, technische Expertise mit effektiver Kommunikation verbunden. Konsequent hochwertige Ergebnisse geliefert.' },
+        r4: { title: 'Ein Enterprise-IT-Dienstleister — Caslano, Schweiz', desc: 'Engagement, Begeisterung und ein starkes Verantwortungsbewusstsein gezeigt. Hohe Ausführungsstandards eingehalten und positiv zur Teamzusammenarbeit beigetragen. Zuverlässig in dynamischen und operativen Umgebungen.' },
+        r5: { title: 'Ein globales Modeunternehmen — Caslano, Schweiz', desc: 'Als motivierter und zuverlässiger Fachmann anerkannt. Aufgaben mit Sorgfalt wahrgenommen und zum Teamerfolg beigetragen. Eine positive, kooperative und lösungsorientierte Haltung bewahrt.' }
       },
       footer: { role: 'ICT Infrastructure Engineer, Zürich', copy: '© 2026 · Alle Rechte vorbehalten' }
     },
 
     it: {
-      nav: { about:'Chi sono', strengths:'Punti di forza', expertise:'Competenze', impact:'Risultati', process:'Approccio', contact:'Contatti' },
+      nav: { about:'Chi sono', strengths:'Punti di forza', expertise:'Competenze', impact:'Risultati', recognition:'Riconoscimenti', process:'Approccio', contact:'Contatti' },
       hero: {
         personal: 'Marito felice | Padre orgoglioso | Ingegnere resiliente',
         headline: 'Costruire infrastrutture resilienti dove affidabilità, security e automation svolgono un ruolo critico.',
@@ -1500,7 +1585,17 @@
       contact: {
         eyebrow: 'Contatti', heading: 'Iniziamo una<br><em>conversazione vera.</em>',
         text: 'Apprezzo le conversazioni significative su infrastructure, security e su come le cose funzionano davvero in pratica. Se vuoi scambiare idee, non esitare a contattarmi.',
-        cvNote: 'CV dettagliato disponibile su richiesta.', emailLabel: 'Email', cvLabel: 'Richiedi CV', cvValue: 'Invia una richiesta CV via email'
+        cvNote: 'CV dettagliato disponibile su richiesta.', refNote: 'Referenze dettagliate disponibili su richiesta.', emailLabel: 'Email', cvLabel: 'Richiedi CV', cvValue: 'Invia una richiesta CV via email', refLabel: 'Richiedi Referenze', refValue: 'Invia una richiesta di referenze via email'
+      },
+      recognition: {
+        eyebrow: 'Riconoscimenti professionali', heading: 'Come sono stato<br><em style="font-style:italic;color:var(--gold)">riconosciuto.</em>',
+        quote: '"Performance costante, affidabilità e ownership — riconosciuti in ambienti regolamentati e internazionali."',
+        quoteAttr: '— Da più datori di lavoro',
+        r1: { title: 'Una società di investimento regolamentata FINMA — Zurigo, Svizzera', desc: 'Ha costantemente superato le aspettative gestendo in autonomia l\'intera infrastruttura IT. Riconosciuto come professionista affidabile e indipendente, con forte senso di responsabilità e attenzione al dettaglio. Prestazioni e condotta valutate come esemplari.' },
+        r2: { title: 'Una società globale di asset management — Zugo, Svizzera', desc: 'Membro apprezzato del team di engineering in un ambiente internazionale e impegnativo. Risultati di alta qualità in infrastructure, security e operations. Dimostrato forte determinazione, professionalità e integrità.' },
+        r3: { title: 'Un\'azienda di IT infrastructure e servizi — Caslano, Svizzera', desc: 'Dimostrato una mentalità proattiva e imprenditoriale, con forte impegno personale. Riconosciuto come punto di riferimento nel team, combinando competenza tecnica e comunicazione efficace. Risultati di alta qualità costantemente consegnati.' },
+        r4: { title: 'Un provider enterprise di servizi IT — Caslano, Svizzera', desc: 'Mostrato dedizione, entusiasmo e un forte senso di responsabilità. Mantenuti alti standard di esecuzione e contribuito positivamente alla collaborazione del team. Affidabile in ambienti dinamici e operativi.' },
+        r5: { title: 'Un\'azienda globale di moda — Caslano, Svizzera', desc: 'Riconosciuto come professionista motivato e affidabile. Gestito le responsabilità con diligenza e contribuito al successo del team. Mantenuto un approccio positivo, cooperativo e orientato alla soluzione.' }
       },
       footer: { role: 'ICT Infrastructure Engineer, Zurigo', copy: '© 2026 · Tutti i diritti riservati' }
     }
