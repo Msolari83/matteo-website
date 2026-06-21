@@ -404,6 +404,40 @@
       opacity: .4;
     }
 
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 2rem;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(244,240,235,.45);
+      text-decoration: none;
+      transition: color .25s ease, opacity .25s ease;
+      z-index: 2;
+    }
+    .scroll-indicator:hover { color: var(--gold); }
+    .scroll-indicator span {
+      font-family: 'DM Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .scroll-indicator svg {
+      width: 16px;
+      height: 16px;
+      animation: scrollBounce 2.2s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: .5; }
+      50% { transform: translateY(6px); opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      .scroll-indicator { display: none; }
+    }
+
     .hero-photo-frame {
       position: relative;
       width: 100%;
@@ -1018,6 +1052,10 @@
         </div>
       </div>
     </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span data-i18n="hero.scroll">Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M5 12l7 7 7-7"/></svg>
+    </a>
   </section>
 
   <!-- ABOUT -->
@@ -1393,7 +1431,8 @@
         headline: 'Keeping critical systems secure, stable, and ready for what comes next.',
         sub: 'Helping organizations maintain and optimize reliable operations and business continuity through expertise in IT infrastructure, identity & access, and security.',
         btn1: 'Contact me',
-        meta1: 'IT Infrastructure', meta2: 'IT Security', meta3: 'Business Continuity'
+        meta1: 'IT Infrastructure', meta2: 'IT Security', meta3: 'Business Continuity',
+        scroll: 'Scroll'
       },
       about: {
         eyebrow: 'About', heading: 'Senior engineer,', headingEm: 'trusted operator.',
@@ -1462,7 +1501,8 @@
         headline: 'Kritische Systeme sicher, stabil und bereit für das Nächste halten.',
         sub: 'Unterstützung von Organisationen bei der Aufrechterhaltung und Optimierung zuverlässiger Abläufe und Business Continuity durch Expertise in IT Infrastructure, Identity & Access sowie Security.',
         btn1: 'Kontakt aufnehmen',
-        meta1: 'IT Infrastructure', meta2: 'IT Security', meta3: 'Business Continuity'
+        meta1: 'IT Infrastructure', meta2: 'IT Security', meta3: 'Business Continuity',
+        scroll: 'Scrollen'
       },
       about: {
         eyebrow: 'Über mich', heading: 'Senior Engineer,', headingEm: 'vertrauenswürdiger Betreiber.',
@@ -1531,7 +1571,8 @@
         headline: 'Mantenere i sistemi critici sicuri, stabili e pronti per ciò che verrà.',
         sub: 'Aiuto le organizzazioni a mantenere e ottimizzare operazioni affidabili e business continuity attraverso competenze in IT infrastructure, identity & access e security.',
         btn1: 'Contattami',
-        meta1: 'IT Infrastructure', meta2: 'IT Security', meta3: 'Business Continuity'
+        meta1: 'IT Infrastructure', meta2: 'IT Security', meta3: 'Business Continuity',
+        scroll: 'Scorri'
       },
       about: {
         eyebrow: 'Chi sono', heading: 'Senior engineer,', headingEm: 'operatore di fiducia.',
