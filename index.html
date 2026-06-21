@@ -266,6 +266,17 @@
       color: var(--gold);
     }
 
+    .hero-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: .95rem;
+      font-weight: 400;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(244,240,235,.55);
+      margin-top: -.4rem;
+      margin-bottom: 1.25rem;
+    }
+
     .hero-role {
       font-family: 'Outfit', sans-serif;
       font-size: .85rem;
@@ -935,6 +946,10 @@
       .hero-meta span { font-size: .4rem; letter-spacing: 0; }
       .hero-meta span:not(:last-child)::after { margin: 0 .16rem; }
     }
+    @media (min-width: 390px) and (max-width: 600px) {
+      .hero-meta span { font-size: .52rem; letter-spacing: .02em; }
+      .hero-meta span:not(:last-child)::after { margin: 0 .25rem; }
+    }
   </style>
 </head>
 <body>
@@ -988,7 +1003,8 @@
             <img src="profile.jpeg" alt="Matteo Solari" class="hero-photo">
           </div>
         </div>
-        <div class="hero-name">Matteo<br><em>Solari</em></div>
+        <div class="hero-name">Matteo <em>Solari</em></div>
+        <div class="hero-subtitle">Senior System Engineer</div>
         <div class="hero-role">
           <div class="hero-meta-row">
             <svg class="hero-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
